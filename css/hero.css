@@ -5,10 +5,10 @@
 /* ---- Hero Dark Gradient (Homepage / LogiVite) ---- */
 .hero {
     position: relative;
-    background: linear-gradient(135deg, #0F172A 0%, #1E293B 40%, #1E3A8A 100%);
+    background: linear-gradient(135deg, #06183d 0%, #0A2350 60%, #0d3068 100%);
     padding: var(--space-32) 0 var(--space-24);
     overflow: hidden;
-    min-height: 600px;
+    min-height: 620px;
     display: flex;
     align-items: center;
 }
@@ -18,7 +18,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
     background-size: 40px 40px;
     pointer-events: none;
 }
@@ -31,7 +31,7 @@
     right: -200px;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(30, 58, 138, 0.3) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(225, 109, 16, 0.1) 0%, transparent 70%);
     pointer-events: none;
 }
 
@@ -59,12 +59,12 @@
     display: inline-flex;
     align-items: center;
     gap: var(--space-2);
-    padding: 6px 16px;
+    padding: 8px 18px;
     font-size: var(--text-xs);
     font-weight: 600;
     color: var(--orange-cta);
-    background: rgba(249, 115, 22, 0.1);
-    border: 1px solid rgba(249, 115, 22, 0.2);
+    background: rgba(225, 109, 16, 0.12);
+    border: 1px solid rgba(225, 109, 16, 0.25);
     border-radius: var(--radius-full);
     margin-bottom: var(--space-6);
     text-transform: uppercase;
@@ -72,9 +72,9 @@
 }
 
 .hero__title {
-    font-size: var(--text-3xl);
+    font-size: var(--text-4xl);
     font-weight: 800;
-    color: var(--bg-white);
+    color: #FFFFFF;
     margin-bottom: var(--space-6);
     letter-spacing: -0.025em;
     line-height: var(--leading-tight);
@@ -82,13 +82,13 @@
 
 @media (min-width: 768px) {
     .hero__title {
-        font-size: var(--text-4xl);
+        font-size: var(--text-5xl);
     }
 }
 
 @media (min-width: 1280px) {
     .hero__title {
-        font-size: var(--text-5xl);
+        font-size: var(--text-6xl);
     }
 }
 
@@ -97,8 +97,8 @@
 }
 
 .hero__subtitle {
-    font-size: var(--text-base);
-    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--text-lg);
+    color: rgba(255, 255, 255, 0.82);
     line-height: var(--leading-relaxed);
     margin-bottom: var(--space-8);
     max-width: 500px;
@@ -136,14 +136,14 @@
 .hero__stats {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-4);
+    gap: var(--space-6);
     padding-top: var(--space-8);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 @media (min-width: 768px) {
     .hero__stats {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -155,9 +155,9 @@
     font-family: var(--font-mono);
     font-size: var(--text-3xl);
     font-weight: 700;
-    color: var(--bg-white);
+    color: #FFFFFF;
     line-height: 1;
-    margin-bottom: var(--space-1);
+    margin-bottom: var(--space-2);
 }
 
 @media (min-width: 768px) {
@@ -168,7 +168,7 @@
 
 .hero__stat-label {
     font-size: var(--text-sm);
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 /* ---- Compact Hero (Inner Pages) ---- */
@@ -212,10 +212,10 @@
 }
 
 .hero__form-box {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: var(--radius-xl);
     padding: var(--space-8);
 }

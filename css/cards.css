@@ -25,17 +25,17 @@
 
 /* ---- Glass Card (Semi-transparent on dark bg) ---- */
 .card--glass {
-    background: rgba(30, 58, 138, 0.12);
+    background: rgba(10, 35, 80, 0.35);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: var(--space-8);
     color: var(--text-on-dark);
 }
 
 .card--glass:hover {
-    border-color: rgba(37, 99, 235, 0.4);
-    background: rgba(30, 58, 138, 0.2);
+    border-color: rgba(0, 185, 242, 0.4);
+    background: rgba(10, 35, 80, 0.5);
     transform: translateY(-2px);
 }
 
@@ -68,7 +68,7 @@
     width: 56px;
     height: 56px;
     border-radius: var(--radius-lg);
-    margin-bottom: var(--space-5);
+    margin-bottom: var(--space-6);
     flex-shrink: 0;
 }
 
@@ -79,7 +79,7 @@
 
 .card__icon--dark {
     background-color: rgba(255, 255, 255, 0.08);
-    color: var(--blue-secondary);
+    color: var(--cyan-accent);
 }
 
 .card__icon--orange {
@@ -97,6 +97,7 @@
     font-size: var(--text-xl);
     font-weight: 600;
     margin-bottom: var(--space-3);
+    color: var(--text-heading);
 }
 
 .card__description {
@@ -109,19 +110,23 @@
     color: var(--text-on-dark-muted);
 }
 
+.card--glass .card__title {
+    color: #FFFFFF;
+}
+
 .card__link {
     display: inline-flex;
     align-items: center;
     gap: var(--space-1);
-    margin-top: var(--space-4);
+    margin-top: var(--space-5);
     font-size: var(--text-sm);
     font-weight: 600;
-    color: var(--blue-primary);
+    color: var(--orange-cta);
     transition: color var(--transition-fast), gap var(--transition-fast);
 }
 
 .card__link:hover {
-    color: var(--blue-secondary);
+    color: var(--orange-hover);
     gap: var(--space-2);
 }
 
@@ -141,7 +146,7 @@
     font-weight: 700;
     color: var(--bg-white);
     line-height: 1;
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-3);
 }
 
 .card--stat .card__label {
@@ -185,20 +190,20 @@
 
 /* ---- Pain Point Card (Warning style on dark) ---- */
 .card--pain {
-    background: rgba(239, 68, 68, 0.06);
-    border: 1px solid rgba(239, 68, 68, 0.15);
+    background: rgba(205, 32, 38, 0.08);
+    border: 1px solid rgba(205, 32, 38, 0.18);
     padding: var(--space-6);
     border-radius: var(--radius-lg);
     color: var(--text-on-dark);
 }
 
 .card--pain:hover {
-    border-color: rgba(239, 68, 68, 0.3);
-    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(205, 32, 38, 0.35);
+    background: rgba(205, 32, 38, 0.12);
 }
 
 .card--pain .card__icon {
-    background: rgba(239, 68, 68, 0.15);
+    background: rgba(205, 32, 38, 0.15);
     color: #FCA5A5;
 }
 
@@ -222,8 +227,8 @@
 }
 
 .card--testimonial .card__quote {
-    font-size: var(--text-3xl);
-    color: var(--blue-light);
+    font-size: var(--text-4xl);
+    color: var(--orange-cta);
     font-family: Georgia, serif;
     line-height: 1;
     margin-bottom: var(--space-4);
@@ -253,13 +258,13 @@
     display: flex;
     align-items: center;
     gap: var(--space-3);
-    padding-top: var(--space-4);
+    padding-top: var(--space-5);
     border-top: 1px solid var(--border);
 }
 
 .card--testimonial .card__author-avatar {
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
     border-radius: var(--radius-full);
     background-color: var(--blue-light);
     display: flex;
@@ -273,13 +278,13 @@
 }
 
 .card--testimonial .card__author-name {
-    font-size: var(--text-sm);
+    font-size: var(--text-base);
     font-weight: 600;
     color: var(--text-heading);
 }
 
 .card--testimonial .card__author-title {
-    font-size: var(--text-xs);
+    font-size: var(--text-sm);
     color: var(--text-muted);
 }
 
@@ -287,7 +292,7 @@
 .section--dark .card--testimonial,
 .section--dark-alt .card--testimonial {
     background-color: var(--bg-dark-alt);
-    border-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.1);
 }
 
 .section--dark .card--testimonial .card__text,
@@ -302,13 +307,13 @@
 
 .section--dark .card--testimonial .card__author-avatar,
 .section--dark-alt .card--testimonial .card__author-avatar {
-    background-color: rgba(30, 58, 138, 0.3);
-    color: var(--blue-secondary);
+    background-color: rgba(0, 185, 242, 0.2);
+    color: var(--cyan-accent);
 }
 
 .section--dark .card--testimonial .card__author,
 .section--dark-alt .card--testimonial .card__author {
-    border-top-color: rgba(255, 255, 255, 0.06);
+    border-top-color: rgba(255, 255, 255, 0.08);
 }
 
 /* ---- Blog Card ---- */
@@ -347,7 +352,7 @@
 
 .card--blog .card__category {
     display: inline-block;
-    padding: 2px 10px;
+    padding: 3px 12px;
     font-size: var(--text-xs);
     font-weight: 600;
     color: var(--blue-primary);
@@ -481,7 +486,7 @@
     font-size: var(--text-xs);
     font-weight: 600;
     color: var(--bg-white);
-    background-color: var(--blue-primary);
+    background-color: var(--orange-cta);
     border-radius: var(--radius-full);
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -520,7 +525,7 @@
     align-items: flex-start;
     gap: var(--space-3);
     padding: var(--space-3) 0;
-    font-size: var(--text-sm);
+    font-size: var(--text-base);
     color: var(--text-body);
     border-bottom: 1px solid var(--bg-light-alt);
 }
@@ -540,7 +545,7 @@
 .card--pricing .card__feature-cross {
     width: 18px;
     height: 18px;
-    color: var(--text-light);
+    color: var(--text-muted);
     flex-shrink: 0;
     margin-top: 1px;
 }

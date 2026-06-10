@@ -214,16 +214,32 @@ function initMobileMenu() {
    ============================================================ */
 function setActiveNavLink() {
     const currentPath = window.location.pathname;
-    const navLinks = document.querySelectorAll('.nav-link, .mobile-menu__link');
+    
+    const allLinks = document.querySelectorAll('.nav-link, .nav-dropdown__link, .mobile-menu__link, .mobile-submenu__link');
 
-    navLinks.forEach(link => {
+    allLinks.forEach(link => {
         const href = link.getAttribute('href');
-        if (!href) return;
+        if (!href || href === '#') return;
 
-        // Normalize paths for comparison
         const linkPath = new URL(href, window.location.origin).pathname;
-        if (currentPath === linkPath || currentPath.startsWith(linkPath) && linkPath !== '/') {
+        
+        // Match logic
+        if (currentPath === linkPath) {
             link.classList.add('active');
+            
+            // Highlight parent desktop tab
+            const parentNavItem = link.closest('.nav-item');
+            if (parentNavItem) {
+                const parentNavLink = parentNavItem.querySelector('.nav-link');
+                if (parentNavLink) parentNavLink.classList.add('active');
+            }
+            
+            // Highlight parent mobile tab
+            const parentSubmenu = link.closest('.mobile-submenu');
+            if (parentSubmenu) {
+                const toggleBtn = document.querySelector(`[data-submenu="${parentSubmenu.id}"]`);
+                if (toggleBtn) toggleBtn.classList.add('active');
+            }
         }
     });
 }

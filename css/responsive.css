@@ -29,6 +29,11 @@ h3 {
     padding: var(--space-10) 0;
 }
 
+/* Section header spacing mobile */
+.section-header {
+    margin-bottom: var(--space-10);
+}
+
 /* Grid collapses to single column on mobile */
 .grid--2,
 .grid--3,

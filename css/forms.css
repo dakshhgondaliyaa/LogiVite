@@ -9,6 +9,12 @@
     gap: var(--space-6);
 }
 
+.form__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
 .form__row {
     display: grid;
     grid-template-columns: 1fr;
@@ -34,7 +40,7 @@
     padding: 16px;
     font-size: var(--text-base);
     color: var(--text-heading);
-    background-color: var(--bg-primary);
+    background-color: var(--bg-white);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
     transition: all var(--transition-fast);
@@ -45,39 +51,39 @@
 
 .section--dark .form__control,
 .hero__form-box .form__control {
-    background-color: rgba(0, 0, 0, 0.2);
-    border-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.25);
+    border-color: rgba(255, 255, 255, 0.15);
     color: var(--bg-white);
 }
 
 textarea.form__control {
-    min-height: 120px;
+    min-height: 130px;
     resize: vertical;
 }
 
 /* ---- Focus State ---- */
 .form__control:focus {
     border-color: var(--blue-primary);
-    box-shadow: 0 0 0 4px var(--blue-lighter);
+    box-shadow: 0 0 0 4px rgba(6, 24, 61, 0.1);
     background-color: var(--bg-white);
 }
 
 .section--dark .form__control:focus,
 .hero__form-box .form__control:focus {
     border-color: var(--orange-cta);
-    box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.15);
-    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 0 4px rgba(225, 109, 16, 0.15);
+    background-color: rgba(0, 0, 0, 0.35);
 }
 
 /* ---- Placeholder ---- */
 .form__control::placeholder {
-    color: var(--text-light);
+    color: var(--text-muted);
     opacity: 1; /* Firefox */
 }
 
 .section--dark .form__control::placeholder,
 .hero__form-box .form__control::placeholder {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.45);
 }
 
 /* ---- Labels ---- */
@@ -150,7 +156,7 @@ textarea.form__control {
     color: var(--error);
     margin-top: var(--space-1);
     position: absolute;
-    bottom: -18px;
+    bottom: -20px;
     left: 0;
 }
 
@@ -166,13 +172,14 @@ textarea.form__control {
 /* ---- Success Message State ---- */
 .form__success {
     display: none;
-    padding: var(--space-4);
+    padding: var(--space-5);
     background-color: var(--success-light);
     color: #065F46;
     border-radius: var(--radius-md);
     margin-bottom: var(--space-4);
     text-align: center;
     font-weight: 500;
+    font-size: var(--text-base);
 }
 
 .form.is-submitted .form__success {
@@ -185,7 +192,7 @@ textarea.form__control {
 
 /* ---- Submit Button Container ---- */
 .form__submit {
-    margin-top: var(--space-2);
+    margin-top: var(--space-4);
 }
 
 .form__submit .btn {
@@ -230,7 +237,7 @@ textarea.form__control {
 .inline-contact__checklist {
     display: flex;
     flex-direction: column;
-    gap: var(--space-3);
+    gap: var(--space-4);
 }
 
 .inline-contact__checklist-item {
@@ -244,5 +251,5 @@ textarea.form__control {
 .inline-contact__checklist-item svg {
     width: 20px;
     height: 20px;
-    color: var(--blue-primary);
+    color: var(--orange-cta);
 }
