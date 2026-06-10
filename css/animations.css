@@ -1,0 +1,315 @@
+/* ============================================================
+   ANIMATIONS — Keyframes, Scroll Reveals, Transitions
+   Pure CSS + IntersectionObserver driven
+   ============================================================ */
+
+/* ============================================================
+   1. SCROLL REVEAL — Base Setup
+   Elements start hidden, become visible when class 'revealed' is added
+   ============================================================ */
+
+/* Fade Up */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-up.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fade In */
+.reveal-fade {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.reveal-fade.revealed {
+    opacity: 1;
+}
+
+/* Slide from Left */
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-left.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Slide from Right */
+.reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-right.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Scale In */
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal-scale.revealed {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ============================================================
+   2. STAGGER ANIMATION
+   Parent has .reveal-stagger, children get delay via CSS variable
+   ============================================================ */
+.reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal-stagger.revealed > *:nth-child(1) { transition-delay: 0s; }
+.reveal-stagger.revealed > *:nth-child(2) { transition-delay: 0.08s; }
+.reveal-stagger.revealed > *:nth-child(3) { transition-delay: 0.16s; }
+.reveal-stagger.revealed > *:nth-child(4) { transition-delay: 0.24s; }
+.reveal-stagger.revealed > *:nth-child(5) { transition-delay: 0.32s; }
+.reveal-stagger.revealed > *:nth-child(6) { transition-delay: 0.40s; }
+.reveal-stagger.revealed > *:nth-child(7) { transition-delay: 0.48s; }
+.reveal-stagger.revealed > *:nth-child(8) { transition-delay: 0.56s; }
+.reveal-stagger.revealed > *:nth-child(9) { transition-delay: 0.64s; }
+.reveal-stagger.revealed > *:nth-child(10) { transition-delay: 0.72s; }
+
+.reveal-stagger.revealed > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================================
+   3. KEYFRAME ANIMATIONS
+   ============================================================ */
+
+/* Gentle float (for hero images/elements) */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Pulse (for CTA attention) */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.animate-pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Subtle glow ring (for primary CTA) */
+@keyframes glow-ring {
+    0% {
+        box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 12px rgba(249, 115, 22, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(249, 115, 22, 0);
+    }
+}
+
+.animate-glow {
+    animation: glow-ring 2.5s ease-in-out infinite;
+}
+
+/* Spin (for loading states) */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+/* Slide in from top (for dropdowns) */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slide-down {
+    animation: slideDown 0.25s ease forwards;
+}
+
+/* Slide in from right (for mobile menu) */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.animate-slide-in-right {
+    animation: slideInRight 0.35s ease forwards;
+}
+
+/* Slide out to right (for mobile menu close) */
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+.animate-slide-out-right {
+    animation: slideOutRight 0.3s ease forwards;
+}
+
+/* Fade in overlay (for mobile menu backdrop) */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* Fade out overlay */
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.animate-fade-out {
+    animation: fadeOut 0.3s ease forwards;
+}
+
+/* Draw line (for process steps) */
+@keyframes drawLine {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Count up shimmer effect */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Chevron rotation for accordion */
+@keyframes rotateChevron {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(180deg); }
+}
+
+/* Infinite scroll for trust bar logos */
+@keyframes scrollLeft {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.animate-scroll-left {
+    animation: scrollLeft 30s linear infinite;
+}
+
+.animate-scroll-left:hover {
+    animation-play-state: paused;
+}
+
+/* ============================================================
+   4. HOVER TRANSITION UTILITIES
+   ============================================================ */
+
+/* Card lift on hover */
+.hover-lift {
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+}
+
+/* Scale on hover */
+.hover-scale {
+    transition: transform var(--transition-base);
+}
+
+.hover-scale:hover {
+    transform: scale(1.03);
+}
+
+/* Border color change on hover */
+.hover-border {
+    transition: border-color var(--transition-base);
+}
+
+.hover-border:hover {
+    border-color: var(--blue-primary);
+}
+
+/* Grayscale to color (for client logos) */
+.hover-color {
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: filter var(--transition-base), opacity var(--transition-base);
+}
+
+.hover-color:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* ============================================================
+   5. REDUCED MOTION SUPPORT
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal-up,
+    .reveal-fade,
+    .reveal-left,
+    .reveal-right,
+    .reveal-scale,
+    .reveal-stagger > * {
+        opacity: 1;
+        transform: none;
+    }
+
+    .animate-scroll-left {
+        animation: none;
+    }
+}

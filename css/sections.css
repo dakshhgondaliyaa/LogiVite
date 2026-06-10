@@ -1,0 +1,805 @@
+/* ============================================================
+   SECTIONS — Reusable Section-Specific Styles
+   ============================================================ */
+
+/* ============================================================
+   1. TRUST BAR — Infinite Logo Marquee
+   ============================================================ */
+.trust-bar {
+    padding: var(--space-12) 0;
+    overflow: hidden;
+    background-color: var(--bg-white);
+    border-bottom: 1px solid var(--border);
+}
+
+.trust-bar__label {
+    text-align: center;
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: var(--space-6);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.trust-bar__track {
+    display: flex;
+    width: max-content;
+}
+
+.trust-bar__slide {
+    display: flex;
+    align-items: center;
+    gap: var(--space-12);
+    padding: 0 var(--space-6);
+    flex-shrink: 0;
+}
+
+.trust-bar__logo {
+    height: 36px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.5;
+    transition: filter var(--transition-base), opacity var(--transition-base);
+}
+
+.trust-bar__logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* ============================================================
+   2. PROCESS / HOW IT WORKS — Steps with connecting line
+   ============================================================ */
+.process {
+    position: relative;
+}
+
+.process__steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .process__steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .process__steps {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-6);
+    }
+}
+
+.process__step {
+    text-align: center;
+    position: relative;
+}
+
+.process__number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-full);
+    background: linear-gradient(135deg, var(--blue-primary), var(--blue-secondary));
+    color: var(--bg-white);
+    font-family: var(--font-mono);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    margin-bottom: var(--space-5);
+    position: relative;
+    z-index: 1;
+}
+
+/* Connecting line between steps (desktop only) */
+@media (min-width: 1024px) {
+    .process__step:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 28px;
+        left: calc(50% + 36px);
+        right: calc(-50% + 36px);
+        height: 2px;
+        background: linear-gradient(90deg, var(--blue-primary), var(--blue-light));
+        z-index: 0;
+    }
+}
+
+.process__step-title {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+}
+
+.process__step-desc {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    max-width: 240px;
+    margin: 0 auto;
+}
+
+/* ============================================================
+   3. TIMELINE — Horizontal Animated Timeline
+   ============================================================ */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+@media (min-width: 1024px) {
+    .timeline {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 0;
+    }
+}
+
+.timeline__item {
+    flex: 1;
+    position: relative;
+    text-align: center;
+    padding: 0 var(--space-4);
+}
+
+/* Timeline line (desktop) */
+@media (min-width: 1024px) {
+    .timeline__item:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 20px;
+        left: calc(50% + 24px);
+        right: calc(-50% + 24px);
+        height: 2px;
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+}
+
+.timeline__dot {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    background-color: rgba(249, 115, 22, 0.15);
+    border: 2px solid var(--orange-cta);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-4);
+    position: relative;
+    z-index: 1;
+}
+
+.timeline__dot svg {
+    width: 18px;
+    height: 18px;
+    color: var(--orange-cta);
+}
+
+.timeline__title {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--bg-white);
+    margin-bottom: var(--space-2);
+}
+
+.timeline__desc {
+    font-size: var(--text-sm);
+    color: var(--text-on-dark-muted);
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+/* ============================================================
+   4. CTA BANNER — Full-Width Call to Action
+   ============================================================ */
+.cta-banner {
+    background: linear-gradient(135deg, var(--orange-cta) 0%, var(--orange-hover) 100%);
+    padding: var(--space-16) 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle pattern overlay */
+.cta-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+}
+
+.cta-banner__content {
+    position: relative;
+    z-index: 1;
+}
+
+.cta-banner__title {
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--bg-white);
+    margin-bottom: var(--space-4);
+}
+
+@media (min-width: 768px) {
+    .cta-banner__title {
+        font-size: var(--text-4xl);
+    }
+}
+
+.cta-banner__subtitle {
+    font-size: var(--text-lg);
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: var(--space-8);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-banner__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-4);
+}
+
+/* ============================================================
+   5. CHECKLIST / BENEFIT LIST
+   ============================================================ */
+.checklist {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.checklist__item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    font-size: var(--text-base);
+    color: var(--text-body);
+}
+
+.checklist__icon {
+    width: 22px;
+    height: 22px;
+    color: var(--success);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.section--dark .checklist__item {
+    color: var(--text-on-dark-muted);
+}
+
+/* ============================================================
+   6. TWO-COLUMN SPLIT SECTION
+   ============================================================ */
+.split {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .split {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-16);
+    }
+}
+
+.split--reverse {
+    direction: ltr;
+}
+
+@media (min-width: 1024px) {
+    .split--reverse {
+        direction: rtl;
+    }
+
+    .split--reverse > * {
+        direction: ltr;
+    }
+}
+
+.split__image {
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ============================================================
+   7. TABS COMPONENT
+   ============================================================ */
+.tabs {
+    width: 100%;
+}
+
+.tabs__nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-8);
+    justify-content: center;
+}
+
+.tabs__btn {
+    padding: 10px 24px;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--text-muted);
+    background-color: transparent;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+
+.tabs__btn:hover {
+    color: var(--text-heading);
+    border-color: var(--text-muted);
+}
+
+.tabs__btn.active {
+    color: var(--bg-white);
+    background-color: var(--blue-primary);
+    border-color: var(--blue-primary);
+}
+
+.tabs__panel {
+    display: none;
+}
+
+.tabs__panel.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Dark variant */
+.section--dark .tabs__btn {
+    color: var(--text-on-dark-muted);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.section--dark .tabs__btn:hover {
+    color: var(--bg-white);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.section--dark .tabs__btn.active {
+    background-color: var(--orange-cta);
+    border-color: var(--orange-cta);
+    color: var(--bg-white);
+}
+
+/* ============================================================
+   8. CLIENT LOGO GRID
+   ============================================================ */
+.client-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+}
+
+@media (min-width: 480px) {
+    .client-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .client-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .client-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.client-grid__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-6);
+    background-color: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+    aspect-ratio: 16/10;
+}
+
+.client-grid__item:hover {
+    border-color: var(--blue-light);
+    box-shadow: var(--shadow-md);
+}
+
+.client-grid__item img {
+    max-height: 40px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all var(--transition-base);
+}
+
+.client-grid__item:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* ============================================================
+   9. CAROUSEL — Testimonial Slider
+   ============================================================ */
+.carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel__track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+    padding: 0 var(--space-3);
+}
+
+@media (min-width: 768px) {
+    .carousel__slide {
+        flex: 0 0 50%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .carousel__slide {
+        flex: 0 0 33.333%;
+    }
+}
+
+.carousel__controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+}
+
+.carousel__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-full);
+    background-color: var(--bg-white);
+    border: 1px solid var(--border);
+    color: var(--text-body);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.carousel__btn:hover {
+    background-color: var(--blue-primary);
+    border-color: var(--blue-primary);
+    color: var(--bg-white);
+}
+
+.section--dark .carousel__btn {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: var(--bg-white);
+}
+
+.section--dark .carousel__btn:hover {
+    background-color: var(--orange-cta);
+    border-color: var(--orange-cta);
+}
+
+.carousel__btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.carousel__dots {
+    display: flex;
+    gap: var(--space-2);
+}
+
+.carousel__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+    background-color: var(--border);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    padding: 0;
+}
+
+.carousel__dot.active {
+    width: 24px;
+    background-color: var(--blue-primary);
+}
+
+.section--dark .carousel__dot {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.section--dark .carousel__dot.active {
+    background-color: var(--orange-cta);
+}
+
+/* ============================================================
+   10. CONTACT SECTION — Two-Column Form + Info
+   ============================================================ */
+.contact-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+}
+
+@media (min-width: 1024px) {
+    .contact-section {
+        grid-template-columns: 1.2fr 1fr;
+        gap: var(--space-12);
+    }
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.contact-info__card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    padding: var(--space-6);
+    background-color: var(--bg-dark-alt);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.contact-info__card-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    background-color: rgba(30, 58, 138, 0.2);
+    color: var(--blue-secondary);
+    flex-shrink: 0;
+}
+
+.contact-info__card-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.contact-info__card-label {
+    font-size: var(--text-sm);
+    color: var(--text-on-dark-muted);
+    margin-bottom: var(--space-1);
+}
+
+.contact-info__card-value {
+    font-size: var(--text-base);
+    font-weight: 500;
+    color: var(--bg-white);
+}
+
+.contact-info__card-value a {
+    color: var(--bg-white);
+    transition: color var(--transition-fast);
+}
+
+.contact-info__card-value a:hover {
+    color: var(--orange-cta);
+}
+
+/* ============================================================
+   11. FAQ SIDEBAR LAYOUT
+   ============================================================ */
+.faq-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+}
+
+@media (min-width: 1024px) {
+    .faq-layout {
+        grid-template-columns: 280px 1fr;
+        gap: var(--space-10);
+    }
+}
+
+.faq-sidebar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+@media (min-width: 1024px) {
+    .faq-sidebar {
+        flex-direction: column;
+        position: sticky;
+        top: 100px;
+        align-self: start;
+    }
+}
+
+.faq-sidebar__btn {
+    padding: 10px 18px;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--text-muted);
+    background-color: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    text-align: left;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+
+@media (min-width: 1024px) {
+    .faq-sidebar__btn {
+        white-space: normal;
+        border-radius: var(--radius-md);
+    }
+}
+
+.faq-sidebar__btn:hover {
+    color: var(--text-heading);
+    border-color: var(--blue-light);
+}
+
+.faq-sidebar__btn.active {
+    color: var(--blue-primary);
+    background-color: var(--blue-lighter);
+    border-color: var(--blue-primary);
+    font-weight: 600;
+}
+
+/* ============================================================
+   12. LEGAL PAGE LAYOUT — TOC Sidebar
+   ============================================================ */
+.legal-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+}
+
+@media (min-width: 1024px) {
+    .legal-layout {
+        grid-template-columns: 260px 1fr;
+        gap: var(--space-10);
+    }
+}
+
+.legal-toc {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .legal-toc {
+        display: block;
+        position: sticky;
+        top: 100px;
+        align-self: start;
+    }
+}
+
+.legal-toc__title {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--text-heading);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--space-4);
+}
+
+.legal-toc__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.legal-toc__link {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    padding: 6px 12px;
+    border-left: 2px solid transparent;
+    transition: all var(--transition-fast);
+    display: block;
+}
+
+.legal-toc__link:hover {
+    color: var(--text-heading);
+    border-left-color: var(--blue-light);
+}
+
+.legal-toc__link.active {
+    color: var(--blue-primary);
+    border-left-color: var(--blue-primary);
+    font-weight: 500;
+}
+
+.legal-content h2 {
+    font-size: var(--text-2xl);
+    margin-top: var(--space-10);
+    margin-bottom: var(--space-4);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--border);
+}
+
+.legal-content h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+.legal-content p {
+    margin-bottom: var(--space-4);
+}
+
+.legal-content ul {
+    margin-bottom: var(--space-4);
+    padding-left: var(--space-6);
+}
+
+.legal-content li {
+    font-size: var(--text-base);
+    color: var(--text-body);
+    margin-bottom: var(--space-2);
+    list-style: disc;
+}
+
+/* ============================================================
+   13. VIEW MORE BUTTON
+   ============================================================ */
+.view-more {
+    text-align: center;
+    margin-top: var(--space-8);
+}
+
+.view-more__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 12px 28px;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--blue-primary);
+    background-color: var(--bg-white);
+    border: 1px solid var(--blue-primary);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.view-more__btn:hover {
+    background-color: var(--blue-primary);
+    color: var(--bg-white);
+}
+
+.view-more__btn.hidden {
+    display: none;
+}

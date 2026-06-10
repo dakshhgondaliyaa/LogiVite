@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refund Policy | LogiBrisk</title>
+    <meta name="description" content="LogiBrisk Cancellation and Refund Policy.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero hero--compact">
+            <div class="container hero__inner">
+                <div class="hero__content reveal-up text-center mx-auto" style="max-width: 800px;">
+                    <h1 class="hero__title">Refund & Cancellation Policy</h1>
+                    <p class="hero__subtitle">Last Updated: May 2024</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTENT LAYOUT -->
+        <section class="section section--light">
+            <div class="container">
+                <div class="legal-layout">
+                    
+                    <!-- Sticky Sidebar TOC -->
+                    <div class="legal-toc reveal-left">
+                        <h3 class="legal-toc__title">Contents</h3>
+                        <div class="legal-toc__list">
+                            <a href="#subscriptions" class="legal-toc__link active">1. Subscriptions</a>
+                            <a href="#cancellation" class="legal-toc__link">2. Cancellation</a>
+                            <a href="#refunds" class="legal-toc__link">3. Refunds</a>
+                            <a href="#implementation" class="legal-toc__link">4. Implementation Fees</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Content Area -->
+                    <div class="legal-content reveal-right">
+                        <h2 id="subscriptions">1. Subscriptions</h2>
+                        <p>LogiBrisk operates on a SaaS (Software as a Service) model. We offer both monthly and annual subscription plans. Your subscription will automatically renew at the end of each billing cycle.</p>
+
+                        <h2 id="cancellation">2. Cancellation</h2>
+                        <p>You can cancel your subscription at any time by contacting your dedicated account manager or emailing support@logibrisk.com. You must submit your cancellation request at least 7 days before your next billing date to avoid being charged for the next cycle.</p>
+                        <p>Upon cancellation, you will continue to have access to the platform until the end of your current paid billing period.</p>
+
+                        <h2 id="refunds">3. Refunds</h2>
+                        <p><strong>Monthly Plans:</strong> We do not offer refunds or credits for partial months of service, downgrade refunds, or refunds for months unused with an open account.</p>
+                        <p><strong>Annual Plans:</strong> If you cancel an annual plan within the first 30 days of the subscription period, you are eligible for a prorated refund for the remaining 11 months. After 30 days, annual subscriptions are non-refundable.</p>
+
+                        <h2 id="implementation">4. Implementation Fees</h2>
+                        <p>Any one-time setup, data migration, or custom integration fees charged during the onboarding process are strictly non-refundable once the implementation work has commenced.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('.legal-toc__link');
+            const sections = Array.from(links).map(link => document.querySelector(link.getAttribute('href')));
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (scrollY >= sectionTop - 150) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                links.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

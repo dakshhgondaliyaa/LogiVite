@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | LogiBrisk</title>
+    <meta name="description" content="LogiBrisk Privacy Policy detailing how we handle and protect your data.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero hero--compact">
+            <div class="container hero__inner">
+                <div class="hero__content reveal-up text-center mx-auto" style="max-width: 800px;">
+                    <h1 class="hero__title">Privacy Policy</h1>
+                    <p class="hero__subtitle">Last Updated: May 2024</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTENT LAYOUT -->
+        <section class="section section--light">
+            <div class="container">
+                <div class="legal-layout">
+                    
+                    <!-- Sticky Sidebar TOC -->
+                    <div class="legal-toc reveal-left">
+                        <h3 class="legal-toc__title">Contents</h3>
+                        <div class="legal-toc__list">
+                            <a href="#introduction" class="legal-toc__link active">1. Introduction</a>
+                            <a href="#information-collection" class="legal-toc__link">2. Information Collection</a>
+                            <a href="#use-of-data" class="legal-toc__link">3. Use of Data</a>
+                            <a href="#data-protection" class="legal-toc__link">4. Data Protection</a>
+                            <a href="#third-party" class="legal-toc__link">5. Third-Party Sharing</a>
+                            <a href="#contact" class="legal-toc__link">6. Contact Us</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Content Area -->
+                    <div class="legal-content reveal-right">
+                        <h2 id="introduction">1. Introduction</h2>
+                        <p>At LogiBrisk, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website logibrisk.com or use our SaaS platform (LogiVite).</p>
+                        <p>Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.</p>
+
+                        <h2 id="information-collection">2. Information We Collect</h2>
+                        <p>We may collect information about you in a variety of ways. The information we may collect on the Site includes:</p>
+                        <ul>
+                            <li><strong>Personal Data:</strong> Personally identifiable information, such as your name, shipping address, email address, and telephone number.</li>
+                            <li><strong>Business Data:</strong> Information regarding your fleet, drivers, clients, and financial transactions entered into the LogiVite TMS platform.</li>
+                            <li><strong>Derivative Data:</strong> Information our servers automatically collect when you access the Site, such as your IP address, your browser type, and your operating system.</li>
+                        </ul>
+
+                        <h2 id="use-of-data">3. Use of Your Information</h2>
+                        <p>Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. Specifically, we may use information collected about you via the Site to:</p>
+                        <ul>
+                            <li>Create and manage your account.</li>
+                            <li>Process transactions and generate invoices/e-way bills on your behalf.</li>
+                            <li>Email you regarding your account or order.</li>
+                            <li>Fulfill and manage purchases, orders, payments, and other transactions related to the Site.</li>
+                            <li>Generate a personal profile about you to make future visits to the Site more personalized.</li>
+                        </ul>
+
+                        <h2 id="data-protection">4. Data Protection</h2>
+                        <p>We use administrative, technical, and physical security measures to help protect your personal and business information. All data stored within the LogiVite SaaS platform is encrypted at rest using AES-256 encryption. Our servers are hosted in secure AWS facilities in India to comply with data residency requirements.</p>
+
+                        <h2 id="third-party">5. Third-Party Data Sharing</h2>
+                        <p>We do not sell, trade, or rent your personal identification information or business data to others. We may share generic aggregated demographic information not linked to any personal identification information regarding visitors and users with our business partners, trusted affiliates, and advertisers.</p>
+                        <p>We may share data with third-party vendors (such as AWS, Fastag API providers, or SMS gateways) strictly for the purpose of facilitating the services you have requested.</p>
+
+                        <h2 id="contact">6. Contact Us</h2>
+                        <p>If you have questions or comments about this Privacy Policy, please contact us at:</p>
+                        <p>
+                            LogiBrisk Technologies<br>
+                            Email: privacy@logibrisk.com<br>
+                            Phone: +91 8000 000 000
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Simple script to highlight TOC items on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('.legal-toc__link');
+            const sections = Array.from(links).map(link => document.querySelector(link.getAttribute('href')));
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (scrollY >= sectionTop - 150) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                links.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+            // Smooth scroll
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

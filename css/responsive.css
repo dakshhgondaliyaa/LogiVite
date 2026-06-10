@@ -1,0 +1,221 @@
+/* ============================================================
+   RESPONSIVE — Mobile-First Breakpoints
+   ============================================================ */
+
+/* ============================================================
+   MOBILE (Default — below 480px)
+   Base styles are already mobile-friendly in globals.css
+   ============================================================ */
+
+/* Typography mobile overrides */
+h1 {
+    font-size: var(--text-3xl);
+}
+
+h2 {
+    font-size: var(--text-2xl);
+}
+
+h3 {
+    font-size: var(--text-xl);
+}
+
+/* Section spacing mobile */
+.section {
+    padding: var(--space-16) 0;
+}
+
+.section--compact {
+    padding: var(--space-10) 0;
+}
+
+/* Grid collapses to single column on mobile */
+.grid--2,
+.grid--3,
+.grid--4,
+.grid--split,
+.grid--2-1,
+.grid--1-2 {
+    grid-template-columns: 1fr;
+}
+
+/* ============================================================
+   SMALL PHONES → LARGE PHONES (480px+)
+   ============================================================ */
+@media (min-width: 480px) {
+    .grid--2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================================================
+   TABLETS (768px+)
+   ============================================================ */
+@media (min-width: 768px) {
+    /* Typography scale up */
+    h1 {
+        font-size: var(--text-5xl);
+    }
+
+    h2 {
+        font-size: var(--text-3xl);
+    }
+
+    h3 {
+        font-size: var(--text-2xl);
+    }
+
+    /* Section padding increase */
+    .section {
+        padding: var(--space-20) 0;
+    }
+
+    /* Container padding */
+    .container {
+        padding-left: var(--space-8);
+        padding-right: var(--space-8);
+    }
+
+    /* Grids */
+    .grid--3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid--4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid--split {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .grid--2-1 {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .grid--1-2 {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    /* Section header spacing */
+    .section-header {
+        margin-bottom: var(--space-12);
+    }
+}
+
+/* ============================================================
+   SMALL DESKTOP (1024px+)
+   ============================================================ */
+@media (min-width: 1024px) {
+    /* Typography final scale */
+    h1 {
+        font-size: var(--text-5xl);
+    }
+
+    h2 {
+        font-size: var(--text-4xl);
+    }
+
+    /* Grids */
+    .grid--3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid--4 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Section padding */
+    .section {
+        padding: var(--space-24) 0;
+    }
+
+    .section--compact {
+        padding: var(--space-16) 0;
+    }
+
+    /* Section header spacing */
+    .section-header {
+        margin-bottom: var(--space-16);
+    }
+}
+
+/* ============================================================
+   FULL DESKTOP (1280px+)
+   ============================================================ */
+@media (min-width: 1280px) {
+    /* Hero heading full size */
+    h1 {
+        font-size: var(--text-6xl);
+    }
+
+    /* 4-column grid */
+    .grid--4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Gap increase for wider screens */
+    .grid {
+        gap: var(--space-8);
+    }
+
+    .grid--split {
+        gap: var(--space-16);
+    }
+}
+
+/* ============================================================
+   MOBILE VISIBILITY HELPERS
+   ============================================================ */
+
+/* Show only on mobile */
+.mobile-only {
+    display: block;
+}
+
+/* Show only on desktop */
+.desktop-only {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .mobile-only {
+        display: none;
+    }
+
+    .desktop-only {
+        display: block;
+    }
+}
+
+/* Flex variants */
+.mobile-only--flex {
+    display: flex;
+}
+
+.desktop-only--flex {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .mobile-only--flex {
+        display: none;
+    }
+
+    .desktop-only--flex {
+        display: flex;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE TEXT ALIGNMENT
+   ============================================================ */
+.text-center-mobile {
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .text-center-mobile {
+        text-align: left;
+    }
+}
