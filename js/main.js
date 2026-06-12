@@ -10,13 +10,10 @@
     const preloader = document.createElement('div');
     preloader.className = 'page-preloader';
     const path = window.location.pathname;
-    let basePath = '';
-    if (path.includes('/company/blog/')) { basePath = '../../'; }
-    else if (path.includes('/services/') || path.includes('/products/') || 
-        path.includes('/company/') || path.includes('/legal/') || path.includes('/portal/')) {
-        basePath = '../';
-    }
-    preloader.innerHTML = `<img src="${basePath}images/logo-logibrisk.svg" alt="LogiBrisk Logo" class="preloader-logo" style="width: 220px;">`;
+    const isGitHub = window.location.hostname.includes('github.io');
+    const repoPrefix = isGitHub ? '/LogiVite/' : '/';
+    
+    preloader.innerHTML = `<img src="${repoPrefix}images/logo-logibrisk.svg" alt="LogiBrisk Logo" class="preloader-logo" style="width: 220px;">`;
     document.body.appendChild(preloader);
 
     window.addEventListener('load', () => {
@@ -54,9 +51,11 @@ async function loadIncludes() {
             const response = await fetch(basePath + 'includes/navbar.html');
             if (response.ok) {
                 let html = await response.text();
-                // Fix absolute paths dynamically for subdirectories and GitHub Pages
-                html = html.replace(/href="\//g, `href="${basePath}`);
-                html = html.replace(/src="\//g, `src="${basePath}`);
+                // Fix absolute paths for GitHub Pages subfolder
+                const isGitHub = window.location.hostname.includes('github.io');
+                const repoPrefix = isGitHub ? '/LogiVite/' : '/';
+                html = html.replace(/href="\//g, `href="${repoPrefix}`);
+                html = html.replace(/src="\//g, `src="${repoPrefix}`);
                 navbarPlaceholder.innerHTML = html;
                 // Initialize navbar behaviors after loading
                 initNavbarScroll();
@@ -76,9 +75,11 @@ async function loadIncludes() {
             const response = await fetch(basePath + 'includes/footer.html');
             if (response.ok) {
                 let html = await response.text();
-                // Fix absolute paths dynamically for subdirectories and GitHub Pages
-                html = html.replace(/href="\//g, `href="${basePath}`);
-                html = html.replace(/src="\//g, `src="${basePath}`);
+                // Fix absolute paths for GitHub Pages subfolder
+                const isGitHub = window.location.hostname.includes('github.io');
+                const repoPrefix = isGitHub ? '/LogiVite/' : '/';
+                html = html.replace(/href="\//g, `href="${repoPrefix}`);
+                html = html.replace(/src="\//g, `src="${repoPrefix}`);
                 footerPlaceholder.innerHTML = html;
             }
         } catch (e) {
