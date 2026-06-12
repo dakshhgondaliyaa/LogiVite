@@ -10,7 +10,13 @@
     const preloader = document.createElement('div');
     preloader.className = 'page-preloader';
     const path = window.location.pathname;
-    preloader.innerHTML = '<img src="/images/logo-logibrisk.svg" alt="LogiBrisk Logo" class="preloader-logo" style="width: 220px;">';
+    let basePath = '';
+    if (path.includes('/company/blog/')) { basePath = '../../'; }
+    else if (path.includes('/services/') || path.includes('/products/') || 
+        path.includes('/company/') || path.includes('/legal/') || path.includes('/portal/')) {
+        basePath = '../';
+    }
+    preloader.innerHTML = `<img src="${basePath}images/logo-logibrisk.svg" alt="LogiBrisk Logo" class="preloader-logo" style="width: 220px;">`;
     document.body.appendChild(preloader);
 
     window.addEventListener('load', () => {
@@ -47,7 +53,10 @@ async function loadIncludes() {
             const basePath = getBasePath();
             const response = await fetch(basePath + 'includes/navbar.html');
             if (response.ok) {
-                const html = await response.text();
+                let html = await response.text();
+                // Fix absolute paths dynamically for subdirectories and GitHub Pages
+                html = html.replace(/href="\//g, `href="${basePath}`);
+                html = html.replace(/src="\//g, `src="${basePath}`);
                 navbarPlaceholder.innerHTML = html;
                 // Initialize navbar behaviors after loading
                 initNavbarScroll();
@@ -66,7 +75,10 @@ async function loadIncludes() {
             const basePath = getBasePath();
             const response = await fetch(basePath + 'includes/footer.html');
             if (response.ok) {
-                const html = await response.text();
+                let html = await response.text();
+                // Fix absolute paths dynamically for subdirectories and GitHub Pages
+                html = html.replace(/href="\//g, `href="${basePath}`);
+                html = html.replace(/src="\//g, `src="${basePath}`);
                 footerPlaceholder.innerHTML = html;
             }
         } catch (e) {
