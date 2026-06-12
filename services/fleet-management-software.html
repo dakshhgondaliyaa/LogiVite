@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../css/globals.css">
     <link rel="stylesheet" href="../css/animations.css">
     <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/footer.css?v=2">
     <link rel="stylesheet" href="../css/hero.css">
     <link rel="stylesheet" href="../css/sections.css">
     <link rel="stylesheet" href="../css/cards.css">
@@ -25,14 +25,20 @@
 
     <main>
         <!-- HERO -->
-        <section class="hero hero--gradient">
-            <div class="container hero__inner">
-                <div class="hero__content reveal-up">
+        <section class="hero hero--compact" style="position: relative; overflow: hidden; background-color: #f8fafc;">
+            <div class="container hero__inner" style="position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: center;">
+                <div class="hero__content reveal-left">
                     <div class="hero__badge">Service Expertise</div>
                     <h1 class="hero__title">Fleet Management Software</h1>
                     <p class="hero__subtitle">Empowering fleet owners with actionable data. Stop tracking maintenance and document renewals in spreadsheets.</p>
                     <div class="hero__actions mt-8">
-                        <a href="/schedule-demo.html" class="btn btn--primary btn--lg hover-lift">Schedule Consultation</a>
+                        <a href="/company/contact-us.html" class="btn btn--primary btn--lg hover-lift">Schedule Consultation</a>
+                    </div>
+                </div>
+            
+                <div class="hero__media reveal-right flex--center" style="position: relative; perspective: 1000px;">
+                    <div class="js-tilt-card" style="width: 100%; max-width: 600px; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-xl); background-color: #fff; transform-style: preserve-3d;">
+                        <img src="../images/fleet_dashboard_new.jpg" alt="Fleet Management Dashboard UI" style="width: 100%; height: auto; display: block;">
                     </div>
                 </div>
             </div>
@@ -56,7 +62,7 @@
             <div class="container cta-banner__content">
                 <h2 class="cta-banner__title">Let's discuss your fleet's needs</h2>
                 <div class="cta-banner__actions mt-8">
-                    <a href="/contact-us.html" class="btn btn--white btn--lg hover-lift">Contact Us</a>
+                    <a href="/company/contact-us.html" class="btn btn--white btn--lg hover-lift">Contact Us</a>
                 </div>
             </div>
         </section>

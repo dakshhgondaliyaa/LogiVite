@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions | LogiBrisk</title>
+    <meta name="description" content="Find answers to common questions about LogiBrisk's logistics software, pricing, implementation, and support.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/globals.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/footer.css?v=2">
+    <link rel="stylesheet" href="../css/hero.css">
+    <link rel="stylesheet" href="../css/sections.css">
+    <link rel="stylesheet" href="../css/cards.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero hero--compact" style="position: relative; overflow: hidden; background-color: #f8fafc;">
+            <div class="container hero__inner" style="position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: center;">
+                <div class="hero__content reveal-up text-center mx-auto" style="max-width: 800px;">
+                    <h1 class="hero__title">Frequently Asked Questions</h1>
+                    <p class="hero__subtitle">Everything you need to know about the platform and how it works.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQs LAYOUT -->
+        <section class="section section--light">
+            <div class="container">
+                <div class="faq-layout">
+                    
+                    <!-- Sidebar Filters -->
+                    <div class="faq-sidebar reveal-left">
+                        <button class="faq-sidebar__btn active" data-target="all">All Questions</button>
+                        <button class="faq-sidebar__btn" data-target="cat-general">General Platform</button>
+                        <button class="faq-sidebar__btn" data-target="cat-pricing">Pricing & Billing</button>
+                        <button class="faq-sidebar__btn" data-target="cat-tech">Technical & Integrations</button>
+                        <button class="faq-sidebar__btn" data-target="cat-support">Onboarding & Support</button>
+                    </div>
+                    
+                    <!-- Content Area -->
+                    <div class="faq-content reveal-right">
+                        
+                        <!-- General Category -->
+                        <div id="cat-general" class="faq-category mb-12">
+                            <h3 class="text-2xl font-semibold mb-6">General Platform</h3>
+                            
+                            <div class="js-accordion mb-4 hover-border" data-group="faq" style="cursor:pointer; background-color: var(--bg-white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-4) var(--space-5);">
+                                <div class="flex--between js-accordion-header">
+                                    <h4 class="text-sm font-semibold">What is LogiVite SaaS?</h4>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="transition:transform 0.3s;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </div>
+                                <div class="js-accordion-content" style="max-height:0; overflow:hidden; transition:max-height 0.3s ease;">
+                                    <p class="text-xs text-muted mt-3">LogiVite SaaS is our flagship Transport Management System designed specifically for Indian logistics companies. It handles FTL, PTL, Fleet Management, and automated billing in a single cloud-based dashboard.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="js-accordion mb-4 hover-border" data-group="faq" style="cursor:pointer; background-color: var(--bg-white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-4) var(--space-5);">
+                                <div class="flex--between js-accordion-header">
+                                    <h4 class="text-sm font-semibold">Do I need an IT team to manage this?</h4>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="transition:transform 0.3s;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </div>
+                                <div class="js-accordion-content" style="max-height:0; overflow:hidden; transition:max-height 0.3s ease;">
+                                    <p class="text-xs text-muted mt-3">Not at all. LogiBrisk is a fully managed cloud service. We handle all hosting, server maintenance, data backups, and security updates. You just log in via your browser and manage your business.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="js-accordion mb-4 hover-border" data-group="faq" style="cursor:pointer; background-color: var(--bg-white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-4) var(--space-5);">
+                                <div class="flex--between js-accordion-header">
+                                    <h4 class="text-sm font-semibold">Does it work on mobile phones?</h4>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="transition:transform 0.3s;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </div>
+                                <div class="js-accordion-content" style="max-height:0; overflow:hidden; transition:max-height 0.3s ease;">
+                                    <p class="text-xs text-muted mt-3">Yes. The admin dashboard is fully responsive and can be accessed on tablets or phones. Furthermore, we provide a dedicated Android app for your drivers to view trips, upload PODs, and manage expenses.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pricing Category -->
+                        <div id="cat-pricing" class="faq-category mb-12">
+                            <h3 class="text-2xl font-semibold mb-6">Pricing & Billing</h3>
+                            
+                            <div class="js-accordion mb-4 hover-border" data-group="faq" style="cursor:pointer; background-color: var(--bg-white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-4) var(--space-5);">
+                                <div class="flex--between js-accordion-header">
+                                    <h4 class="text-sm font-semibold">How is the software priced?</h4>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="transition:transform 0.3s;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </div>
+                                <div class="js-accordion-content" style="max-height:0; overflow:hidden; transition:max-height 0.3s ease;">
+                                    <p class="text-xs text-muted mt-3">We charge a flat monthly or annual subscription fee based on your fleet size and the modules you need. There are no hidden charges, and you don't pay per-user fees.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="js-accordion mb-4 hover-border" data-group="faq" style="cursor:pointer; background-color: var(--bg-white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-4) var(--space-5);">
+                                <div class="flex--between js-accordion-header">
+                                    <h4 class="text-sm font-semibold">Are there any setup fees?</h4>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="transition:transform 0.3s;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </div>
+                                <div class="js-accordion-content" style="max-height:0; overflow:hidden; transition:max-height 0.3s ease;">
+                                    <p class="text-xs text-muted mt-3">Standard setup is free. If you require extensive data migration from an old legacy system or custom API integrations, a one-time implementation fee may apply. This will be discussed upfront before you sign anything.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tech Category -->
+                        <div id="cat-tech" class="faq-category mb-12">
+                            <h3 class="text-2xl font-semibold mb-6">Technical & Integrations</h3>
+                            
+                            <div class="js-accordion mb-4 hover-border" data-group="faq" style="cursor:pointer; background-color: var(--bg-white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-4) var(--space-5);">
+                                <div class="flex--between js-accordion-header">
+                                    <h4 class="text-sm font-semibold">Can it integrate with Tally?</h4>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="transition:transform 0.3s;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </div>
+                                <div class="js-accordion-content" style="max-height:0; overflow:hidden; transition:max-height 0.3s ease;">
+                                    <p class="text-xs text-muted mt-3">Yes, we offer seamless integration with Tally ERP 9 and Tally Prime. Invoices and vouchers generated in LogiBrisk are automatically pushed to Tally, eliminating double entry.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="js-accordion mb-4 hover-border" data-group="faq" style="cursor:pointer; background-color: var(--bg-white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-4) var(--space-5);">
+                                <div class="flex--between js-accordion-header">
+                                    <h4 class="text-sm font-semibold">Do you integrate with FASTag and GPS?</h4>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="transition:transform 0.3s;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </div>
+                                <div class="js-accordion-content" style="max-height:0; overflow:hidden; transition:max-height 0.3s ease;">
+                                    <p class="text-xs text-muted mt-3">Yes. We pull data from major GPS providers and FASTag toll APIs so you can cross-verify trip routes and toll deductions directly within our dashboard.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="js-accordion mb-4 hover-border" data-group="faq" style="cursor:pointer; background-color: var(--bg-white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-4) var(--space-5);">
+                                <div class="flex--between js-accordion-header">
+                                    <h4 class="text-sm font-semibold">Is my data secure?</h4>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="transition:transform 0.3s;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </div>
+                                <div class="js-accordion-content" style="max-height:0; overflow:hidden; transition:max-height 0.3s ease;">
+                                    <p class="text-xs text-muted mt-3">We use enterprise-grade AWS servers located in Mumbai to ensure data residency compliance. All connections use 256-bit SSL encryption, and databases are backed up daily.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Support Category -->
+                        <div id="cat-support" class="faq-category">
+                            <h3 class="text-2xl font-semibold mb-6">Onboarding & Support</h3>
+                            
+                            <div class="js-accordion mb-4 hover-border" data-group="faq" style="cursor:pointer; background-color: var(--bg-white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-4) var(--space-5);">
+                                <div class="flex--between js-accordion-header">
+                                    <h4 class="text-sm font-semibold">How long does onboarding take?</h4>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="transition:transform 0.3s;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </div>
+                                <div class="js-accordion-content" style="max-height:0; overflow:hidden; transition:max-height 0.3s ease;">
+                                    <p class="text-xs text-muted mt-3">Typically 5 working days. This includes setting up your account, configuring your rate charts, migrating vehicle/driver master data, and conducting a training session with your staff.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="js-accordion mb-4 hover-border" data-group="faq" style="cursor:pointer; background-color: var(--bg-white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-4) var(--space-5);">
+                                <div class="flex--between js-accordion-header">
+                                    <h4 class="text-sm font-semibold">What kind of support do you provide?</h4>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="transition:transform 0.3s;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </div>
+                                <div class="js-accordion-content" style="max-height:0; overflow:hidden; transition:max-height 0.3s ease;">
+                                    <p class="text-xs text-muted mt-3">We provide phone, email, and WhatsApp support during business hours (9AM - 6PM IST). Critical server issues are monitored 24/7.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- INLINE CONTACT -->
+        <section class="section section--light pt-0">
+            <div class="container">
+                <div class="card card--bordered text-center reveal-up" style="padding: var(--space-12);">
+                    <h3 style="font-size: var(--text-3xl); margin-bottom: var(--space-4);">Still have questions?</h3>
+                    <p style="color: var(--text-muted); font-size: var(--text-lg); margin-bottom: var(--space-6);">If you couldn't find the answer to your question, feel free to reach out to our team directly.</p>
+                    <a href="/company/contact-us.html" class="btn btn--primary">Contact Support</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/accordion.js"></script>
+
+</body>
+</html>

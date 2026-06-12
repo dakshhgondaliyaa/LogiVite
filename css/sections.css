@@ -586,7 +586,7 @@
     padding: var(--space-6);
     background-color: var(--bg-dark-alt);
     border-radius: var(--radius-lg);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border);
 }
 
 .contact-info__card-icon {
@@ -596,8 +596,8 @@
     align-items: center;
     justify-content: center;
     border-radius: var(--radius-md);
-    background-color: rgba(0, 185, 242, 0.15);
-    color: var(--cyan-accent);
+    background-color: var(--blue-light);
+    color: var(--blue-primary);
     flex-shrink: 0;
 }
 
@@ -608,18 +608,18 @@
 
 .contact-info__card-label {
     font-size: var(--text-sm);
-    color: var(--text-on-dark-muted);
+    color: var(--text-muted);
     margin-bottom: var(--space-1);
 }
 
 .contact-info__card-value {
     font-size: var(--text-base);
     font-weight: 500;
-    color: var(--bg-white);
+    color: var(--text-heading);
 }
 
 .contact-info__card-value a {
-    color: var(--bg-white);
+    color: var(--text-heading);
     transition: color var(--transition-fast);
 }
 

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/globals.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/footer.css?v=2">
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/sections.css">
     <link rel="stylesheet" href="css/cards.css">
@@ -33,30 +33,32 @@
         <!-- ==========================================
              1. HERO SECTION
              ========================================== -->
-        <section class="hero">
-            <div class="container hero__inner">
+        <section class="hero" style="position: relative; overflow: hidden; background-color: #f8fafc; padding-top: 160px;">
+            <!-- Background Video / Image -->
+            <img src="images/hero-bg-video.gif" alt="Logistics Background" style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translateX(-50%) translateY(-50%); z-index: 0; opacity: 0.15; object-fit: cover; pointer-events: none;">
+            <div class="container hero__inner" style="position: relative; z-index: 1;">
                 <div class="hero__content reveal-left">
                     <div class="hero__badge">Transport Management System</div>
                     <h1 class="hero__title">
-                        India's Smartest
+                        Optimize, Automate & Scale
                         <br>
-                        <span class="hero__title-highlight">Logistics Software.</span>
+                        <span class="hero__title-highlight">Your Logistics.</span>
                     </h1>
                     <p class="hero__subtitle">
-                        Empowering transport businesses with an all-in-one TMS for Fleet, FTL, PTL, and Last Mile operations. Say goodbye to manual processes.
+                        Transform your logistics with Logibrisk Transportation Management Software to optimise operations, automate workflows, and scale faster. Gain real-time visibility, reduce costs, and deliver smarter, more efficient supply chain performance today.
                     </p>
                     <div class="hero__actions">
-                        <a href="/schedule-demo.html" class="btn btn--primary btn--lg hover-lift animate-glow">
+                        <a href="portal/schedule-demo.html?nocache=1" class="btn btn--primary btn--lg hover-lift animate-glow">
                             Schedule Demo
                         </a>
-                        <a href="/logivite.html" class="btn btn--outline-light btn--lg hover-lift">
+                        <a href="/products/logivite.html" class="btn btn--outline btn--lg hover-lift">
                             Explore LogiVite SaaS
                         </a>
                     </div>
                     
                     <div class="hero__stats reveal-up reveal-stagger" style="margin-top: 32px; gap: 40px;">
                         <div class="hero__stat">
-                            <div class="hero__stat-number" style="font-size: 2rem; font-weight: 800;">2.4 Billion+</div>
+                            <div class="hero__stat-number" style="font-size: 2rem; font-weight: 800;">1 Billion+</div>
                             <div class="hero__stat-label">Shipments Completed</div>
                         </div>
                         <div class="hero__stat">
@@ -64,14 +66,16 @@
                             <div class="hero__stat-label">Costs Cut</div>
                         </div>
                         <div class="hero__stat">
-                            <div class="hero__stat-number" style="font-size: 2rem; font-weight: 800;">100 Billion+</div>
+                            <div class="hero__stat-number" style="font-size: 2rem; font-weight: 800;">1 Billion+</div>
                             <div class="hero__stat-label">Journeys Done</div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="hero__media reveal-right flex--center">
-                    <img src="images/home-hero-illustration.jpg" alt="LogiBrisk Logistics Software" style="width:100%; max-width:600px; height:auto; object-fit: contain; border-radius:16px;">
+                <div class="hero__media reveal-right flex--center" style="position: relative; perspective: 1000px;">
+                    <div class="js-tilt-card" style="width: 100%; max-width: 600px; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-xl); background-color: transparent; transform-style: preserve-3d;">
+                        <img src="images/multimodal-transport.png" alt="Multimodal Transportation" style="width: 100%; height: auto; object-fit: contain; display: block;">
+                    </div>
                 </div>
             </div>
         </section>
@@ -103,37 +107,6 @@
             </div>
         </section>
 
-        <!-- ==========================================
-             3. LIVE TRANSIT / REAL-TIME TRACKING
-             ========================================== -->
-        <section class="section section--dark">
-            <div class="container split" style="align-items: center;">
-                <div class="split__content reveal-left">
-                    <span class="section-header__label" style="background: rgba(225, 109, 16, 0.12); color: var(--orange-cta);">Live Transit</span>
-                    <h2 class="section-header__title" style="color: var(--text-light); margin-top: 16px;">Real-Time Tracking &<br>Complete Visibility.</h2>
-                    <p class="section-header__desc" style="color: rgba(255,255,255,0.7); margin-top: 24px;">
-                        Stay completely informed with our industry-leading live transit dashboard. Track your fleet, monitor shipment milestones, and get proactive alerts the moment any delay occurs.
-                    </p>
-                    <ul style="list-style: none; margin-top: 32px; display: flex; flex-direction: column; gap: 16px; padding: 0;">
-                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-light);">
-                            <div style="background: var(--orange-cta); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-weight: bold; font-size: 14px;">✓</div>
-                            Live GPS Map Integrations
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-light);">
-                            <div style="background: var(--orange-cta); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #18181B; font-weight: bold; font-size: 14px;">✓</div>
-                            Automated Milestone Updates
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-light);">
-                            <div style="background: var(--orange-cta); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #18181B; font-weight: bold; font-size: 14px;">✓</div>
-                            Shareable Tracking Links for Customers
-                        </li>
-                    </ul>
-                </div>
-                <div class="split__media reveal-right flex--center">
-                    <img src="images/live-transit-dashboard.png" alt="Live Transit Tracking" style="width:100%; height:auto; border-radius:var(--radius-lg); box-shadow:var(--shadow-xl); border:1px solid rgba(255,255,255,0.1);">
-                </div>
-            </div>
-        </section>
 
         <!-- ==========================================
              4. SERVICES OVERVIEW
@@ -151,49 +124,49 @@
                         <div class="card__icon card__icon--blue">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                         </div>
-                        <h3 class="card__title">Fleet Management</h3>
-                        <p class="card__description">Complete control over your vehicles, drivers, maintenance, and fuel expenses.</p>
-                        <a href="/services/fleet-management-software.html" class="card__link">Learn More</a>
+                        <h3 class="card__title">Vehicle Tracking and Monitoring</h3>
+                        <p class="card__description">Track vehicles in real time with GPS-enabled transportation management software, improve fleet visibility, ensure on-time deliveries, enhance security, and monitor driver behavior for better operational control.</p>
+                        <a href="#" class="card__link">Learn More</a>
                     </div>
                     <div class="card card--elevated hover-lift">
                         <div class="card__icon card__icon--orange">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
                         </div>
-                        <h3 class="card__title">Full Truckload (FTL)</h3>
-                        <p class="card__description">Optimize full truckload operations from booking to delivery and billing.</p>
-                        <a href="/services/full-truckload-management-software.html" class="card__link">Learn More</a>
+                        <h3 class="card__title">Fuel Management</h3>
+                        <p class="card__description">Optimize fuel consumption with smart fuel management tools, track usage patterns, prevent fuel theft, reduce operational costs, and improve overall efficiency with accurate data insights.</p>
+                        <a href="#" class="card__link">Learn More</a>
                     </div>
                     <div class="card card--elevated hover-lift">
                         <div class="card__icon card__icon--blue">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
                         </div>
-                        <h3 class="card__title">Part Truckload (PTL)</h3>
-                        <p class="card__description">Manage complex hub-and-spoke models, transshipments, and consolidated billing.</p>
-                        <a href="/services/part-truckload-management-software.html" class="card__link">Learn More</a>
+                        <h3 class="card__title">Driver Management</h3>
+                        <p class="card__description">Manage driver performance, attendance, and schedules efficiently, ensure compliance, track behavior, assign trips easily, and improve safety standards with a centralized driver management system.</p>
+                        <a href="#" class="card__link">Learn More</a>
                     </div>
                     <div class="card card--elevated hover-lift">
                         <div class="card__icon card__icon--dark">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                         </div>
-                        <h3 class="card__title">Express Cargo</h3>
-                        <p class="card__description">Time-critical delivery management with barcode scanning and auto-routing.</p>
-                        <a href="/services/express-cargo-management-software.html" class="card__link">Learn More</a>
+                        <h3 class="card__title">Maintenance Management</h3>
+                        <p class="card__description">Schedule preventive maintenance, track service history, reduce unexpected breakdowns, increase vehicle lifespan, and ensure smooth operations with automated maintenance alerts and service management tools.</p>
+                        <a href="#" class="card__link">Learn More</a>
                     </div>
                     <div class="card card--elevated hover-lift">
                         <div class="card__icon card__icon--blue">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                         </div>
-                        <h3 class="card__title">Last Mile Delivery</h3>
-                        <p class="card__description">Mobile apps for delivery agents, route optimization, and digital proof of delivery.</p>
-                        <a href="/services/last-mile-delivery-management-software.html" class="card__link">Learn More</a>
+                        <h3 class="card__title">Route Planning and Optimization</h3>
+                        <p class="card__description">Plan efficient delivery routes, reduce travel time, save fuel costs, avoid traffic delays, and improve delivery performance using advanced route optimization and real-time tracking features.</p>
+                        <a href="#" class="card__link">Learn More</a>
                     </div>
                     <div class="card card--elevated hover-lift">
                         <div class="card__icon card__icon--orange">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
                         </div>
-                        <h3 class="card__title">E-commerce Delivery</h3>
-                        <p class="card__description">API integrations with major storefronts, NDR management, and return tracking.</p>
-                        <a href="/services/ecommerce-delivery-management-software.html" class="card__link">Learn More</a>
+                        <h3 class="card__title">Reports and Analytics</h3>
+                        <p class="card__description">Generate detailed reports, analyze fleet performance, track KPIs, gain actionable insights, and make data-driven decisions to improve logistics efficiency and overall business growth.</p>
+                        <a href="#" class="card__link">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -204,140 +177,207 @@
              ========================================== -->
         <section class="section section--dark">
             <div class="container">
-                <div class="split">
+                <div class="split" style="align-items: stretch;">
                     <div class="split__content reveal-left">
                         <span class="section-header__label">Why LogiBrisk?</span>
-                        <h2 class="section-header__title text-white">Built for scale, designed for simplicity.</h2>
+                        <h2 class="section-header__title text-white">Why Choose Logibrisk for Logistics Software</h2>
                         <p class="text-lg text-on-dark-muted mb-6">
-                            We understand that logistics is complex. That's why our software isn't. We provide enterprise-grade power without the enterprise-level complexity.
+                            Logibrisk delivers powerful, scalable transportation management solutions designed to simplify operations, automate workflows, and drive efficiency, helping logistics businesses grow faster with complete control and real-time visibility.
                         </p>
                         
                         <div class="grid grid--2 mt-8">
                             <div class="card card--glass">
-                                <h3 class="card__title">99.9% Uptime</h3>
-                                <p class="card__description text-sm">Cloud-native architecture ensures your business never stops moving.</p>
+                                <h3 class="card__title">Advanced Automation</h3>
+                                <p class="card__description text-sm">Automate daily logistics tasks, reduce manual work, and improve operational efficiency.</p>
                             </div>
                             <div class="card card--glass">
-                                <h3 class="card__title">5-Day Go-Live</h3>
-                                <p class="card__description text-sm">Our rapid onboarding process means you see ROI in days, not months.</p>
+                                <h3 class="card__title">Real-Time Visibility</h3>
+                                <p class="card__description text-sm">Track shipments, vehicles, and operations with accurate, real-time insights.</p>
                             </div>
                             <div class="card card--glass">
-                                <h3 class="card__title">Zero IT Team</h3>
-                                <p class="card__description text-sm">Fully managed SaaS. We handle the servers, backups, and security.</p>
+                                <h3 class="card__title">Scalable Solutions</h3>
+                                <p class="card__description text-sm">Easily scale your logistics operations as your business grows without complexity.</p>
                             </div>
                             <div class="card card--glass">
-                                <h3 class="card__title">24/7 Support</h3>
-                                <p class="card__description text-sm">Dedicated account managers who understand Indian transport operations.</p>
+                                <h3 class="card__title">Dedicated Support</h3>
+                                <p class="card__description text-sm">Get reliable support and expert guidance to ensure smooth system performance.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="split__media reveal-right">
+                    <div class="split__media reveal-right" style="height: 100%;">
                         <!-- Illustration/Image -->
-                        <img src="images/mobile.png" alt="Logistics Mobile App" style="width:100%; height:auto; max-height:400px; object-fit:contain; border-radius:var(--radius-xl);">
+                        <img src="img/logistics_operations_realistic.png" alt="Logistics Operations" style="width:100%; height:100%; min-height:100%; object-fit:cover; border-radius:var(--radius-xl); box-shadow: var(--shadow-lg);">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- ==========================================
+             6. PRODUCT MODULES
+             ========================================== -->
+        <section class="section section--light">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <span class="section-header__label">Our Products</span>
+                    <h2 class="section-header__title">Transportation Management Software(TMS) for Complete Business Control</h2>
+                    <p class="section-header__subtitle">Our advanced TMS simplifies operations, connects every module, and automates logistics processes, helping businesses manage, scale, and optimize transportation with efficiency and real-time visibility.</p>
+                </div>
+
+                <div class="grid grid--3 reveal-stagger">
+                    <div class="card card--bordered hover-lift">
+                        <h3 class="card__title" style="color: var(--blue-primary); margin-bottom: 12px;">Smart Logistics Management (FTL & PTL)</h3>
+                        <p class="card__description text-sm">Manage full and part truckload operations efficiently with smart planning and tracking.</p>
+                    </div>
+                    <div class="card card--bordered hover-lift">
+                        <h3 class="card__title" style="color: var(--blue-primary); margin-bottom: 12px;">Smart Billing Management</h3>
+                        <p class="card__description text-sm">Automate invoicing, reduce errors, and ensure accurate, faster billing processes.</p>
+                    </div>
+                    <div class="card card--bordered hover-lift">
+                        <h3 class="card__title" style="color: var(--blue-primary); margin-bottom: 12px;">Accounting Management</h3>
+                        <p class="card__description text-sm">Handle financial operations, track expenses, and manage accounts seamlessly in one system.</p>
+                    </div>
+                    <div class="card card--bordered hover-lift">
+                        <h3 class="card__title" style="color: var(--blue-primary); margin-bottom: 12px;">Fleet Management</h3>
+                        <p class="card__description text-sm">Monitor vehicles, schedule maintenance, and improve fleet performance with real-time data.</p>
+                    </div>
+                    <div class="card card--bordered hover-lift">
+                        <h3 class="card__title" style="color: var(--blue-primary); margin-bottom: 12px;">Auction Management</h3>
+                        <p class="card__description text-sm">Enable digital freight bidding, connect transporters, and optimize load pricing efficiently.</p>
+                    </div>
+                    <div class="card card--bordered hover-lift">
+                        <h3 class="card__title" style="color: var(--blue-primary); margin-bottom: 12px;">CRM System</h3>
+                        <p class="card__description text-sm">Manage customer relationships, track interactions, and improve service quality effectively.</p>
+                    </div>
+                    <div class="card card--bordered hover-lift">
+                        <h3 class="card__title" style="color: var(--blue-primary); margin-bottom: 12px;">Last Mile Delivery</h3>
+                        <p class="card__description text-sm">Optimize last-mile deliveries, ensure faster dispatch, and improve customer satisfaction.</p>
+                    </div>
+                    <div class="card card--bordered hover-lift">
+                        <h3 class="card__title" style="color: var(--blue-primary); margin-bottom: 12px;">Digital Broker Platform</h3>
+                        <p class="card__description text-sm">Simplify freight brokerage with automated processes and real-time communication between stakeholders.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             FEATURES
+             ========================================== -->
+        <section class="section section--dark">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <span class="section-header__label">Features</span>
+                    <h2 class="section-header__title">Features Built for Smarter Logistics</h2>
+                </div>
+                <div class="grid grid--3 reveal-stagger">
+                    <div class="card card--glass">
+                        <h3 class="card__title text-white">1. End-to-End Logistics ERP Platform</h3>
+                        <p class="card__description text-sm">A complete ERP system combining fleet, operations, billing, and accounting into one platform.</p>
+                    </div>
+                    <div class="card card--glass">
+                        <h3 class="card__title text-white">2. E-Way Bill Automation</h3>
+                        <p class="card__description text-sm">Automate E-Way bill generation and management for seamless compliance.</p>
+                    </div>
+                    <div class="card card--glass">
+                        <h3 class="card__title text-white">3. Integrated Financial Management</h3>
+                        <p class="card__description text-sm">Built-in accounting and financial tools to track profitability and expenses.</p>
+                    </div>
+                    <div class="card card--glass">
+                        <h3 class="card__title text-white">4. Operational Automation</h3>
+                        <p class="card__description text-sm">Reduce manual tasks with automated indenting, routing, and driver assignment.</p>
+                    </div>
+                    <div class="card card--glass">
+                        <h3 class="card__title text-white">5. Scanning and Labeling System</h3>
+                        <p class="card__description text-sm">Hub and spoke management made easy with barcode scanning and auto routing.</p>
+                    </div>
+                    <div class="card card--glass">
+                        <h3 class="card__title text-white">6. Real-Time Dashboards</h3>
+                        <p class="card__description text-sm">Actionable insights and analytics for complete operational control.</p>
+                    </div>
+                    <div class="card card--glass">
+                        <h3 class="card__title text-white">7. Vendor and Broker Management</h3>
+                        <p class="card__description text-sm">Easily onboard, manage, and settle accounts with market vendors.</p>
+                    </div>
+                    <div class="card card--glass">
+                        <h3 class="card__title text-white">8. Customer and Vendor Portals</h3>
+                        <p class="card__description text-sm">Give your clients and partners dedicated portals for transparency.</p>
+                    </div>
+                    <div class="card card--glass">
+                        <h3 class="card__title text-white">9. System Integrations</h3>
+                        <p class="card__description text-sm">Seamlessly integrate with GPS, Fastag, and major accounting softwares.</p>
+                    </div>
+                    <div class="card card--glass">
+                        <h3 class="card__title text-white">10. Custom ERP Solution</h3>
+                        <p class="card__description text-sm">Tailored functionalities specifically mapped to your unique business workflows.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ==========================================
-             5. PRODUCT MODULES (Tabs)
+             INDUSTRIES
              ========================================== -->
         <section class="section section--light">
             <div class="container">
                 <div class="section-header reveal-up">
-                    <span class="section-header__label">Our Products</span>
-                    <h2 class="section-header__title">The Smart Suite</h2>
-                    <p class="section-header__subtitle">Modular solutions. Use them individually or integrate them for a complete ecosystem.</p>
+                    <span class="section-header__label">Industries We Serve</span>
+                    <h2 class="section-header__title">Customized logistics solutions across sectors</h2>
                 </div>
+                <div class="grid grid--3 reveal-stagger">
+                    <div class="card card--bordered text-center hover-lift">
+                        <h3 class="card__title text-lg">3PL Service Providers</h3>
+                    </div>
+                    <div class="card card--bordered text-center hover-lift">
+                        <h3 class="card__title text-lg">Cold chain logistics</h3>
+                    </div>
+                    <div class="card card--bordered text-center hover-lift">
+                        <h3 class="card__title text-lg">Broker Dispatch Management</h3>
+                    </div>
+                    <div class="card card--bordered text-center hover-lift">
+                        <h3 class="card__title text-lg">Field Service Businesses</h3>
+                    </div>
+                    <div class="card card--bordered text-center hover-lift">
+                        <h3 class="card__title text-lg">Taxi and Mobility Services</h3>
+                    </div>
+                    <div class="card card--bordered text-center hover-lift">
+                        <h3 class="card__title text-lg">Logistics and Transportation</h3>
+                    </div>
+                    <div class="card card--bordered text-center hover-lift">
+                        <h3 class="card__title text-lg">E-commerce & Last Mile</h3>
+                    </div>
+                    <div class="card card--bordered text-center hover-lift">
+                        <h3 class="card__title text-lg">Construction & Infra</h3>
+                    </div>
+                    <div class="card card--bordered text-center hover-lift">
+                        <h3 class="card__title text-lg">Manufacturing & Distribution</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <div class="tabs js-tabs reveal-up">
-                    <div class="tabs__nav">
-                        <button class="tabs__btn js-tab-btn active" data-target="tab-ftl">Smart FTL</button>
-                        <button class="tabs__btn js-tab-btn" data-target="tab-ptl">Smart PTL</button>
-                        <button class="tabs__btn js-tab-btn" data-target="tab-fleet">Smart Fleet</button>
-                        <button class="tabs__btn js-tab-btn" data-target="tab-billing">Smart Billing</button>
+        <!-- ==========================================
+             PHILOSOPHY
+             ========================================== -->
+        <section class="section section--light-alt" style="background-color: var(--blue-light);">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <h2 class="section-header__title">Our Philosophy</h2>
+                </div>
+                <div class="grid grid--3 reveal-stagger">
+                    <div class="card card--elevated">
+                        <h3 class="card__title text-xl mb-3">Our Mission</h3>
+                        <p class="card__description">To deliver a powerful, easy-to-use Transportation Management System that streamlines operations, simplifies accounting, and optimizes fleet performance, empowering logistics businesses to operate efficiently and scale seamlessly.</p>
                     </div>
-
-                    <!-- FTL Panel -->
-                    <div class="tabs__panel js-tab-panel active" id="tab-ftl">
-                        <div class="card card--bordered">
-                            <div class="split" style="gap:var(--space-8);">
-                                <div>
-                                    <h3 class="text-3xl mb-4">Smart FTL Management</h3>
-                                    <p class="text-muted mb-6">End-to-end automation for Full Truckload operations. Manage indenting, vehicle placement, advances, tracking, and final settlement from a single screen.</p>
-                                    <div class="checklist mb-8">
-                                        <div class="checklist__item">
-                                            <svg class="checklist__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                            One-click LR and E-Way bill generation
-                                        </div>
-                                        <div class="checklist__item">
-                                            <svg class="checklist__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                            Broker and Market Vehicle management
-                                        </div>
-                                        <div class="checklist__item">
-                                            <svg class="checklist__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                            Auto-calculation of detention and halting charges
-                                        </div>
-                                    </div>
-                                    <a href="/products/smart-full-truckload-management-system.html?v=2" class="btn btn--outline">Explore Smart FTL</a>
-                                </div>
-                                <img src="images/ftl_dashboard.png" alt="Smart FTL Dashboard" style="width: 100%; height: 300px; object-fit: cover; object-position: left top; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
-                            </div>
-                        </div>
+                    <div class="card card--elevated">
+                        <h3 class="card__title text-xl mb-3">Our Vision</h3>
+                        <p class="card__description">To be the industry standard in logistics technology, transforming complex supply chain challenges into automated, scalable solutions that drive operational excellence and sustainable growth for transportation companies worldwide.</p>
                     </div>
-
-                    <!-- PTL Panel -->
-                    <div class="tabs__panel js-tab-panel" id="tab-ptl">
-                        <div class="card card--bordered">
-                            <div class="split" style="gap:var(--space-8);">
-                                <div>
-                                    <h3 class="text-3xl mb-4">Smart PTL Management</h3>
-                                    <p class="text-muted mb-6">Designed for complex Part Truckload logistics. Seamlessly manage pickups, hub consolidations, line-haul manifests, and last-mile deliveries.</p>
-                                    <div class="checklist mb-8">
-                                        <div class="checklist__item">
-                                            <svg class="checklist__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                            Barcode scanning at hubs
-                                        </div>
-                                        <div class="checklist__item">
-                                            <svg class="checklist__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                            Automated loading manifests and DRS
-                                        </div>
-                                        <div class="checklist__item">
-                                            <svg class="checklist__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                            Weight vs Volume pricing logic
-                                        </div>
-                                    </div>
-                                    <a href="/products/smart-part-truckload-management-system.html?v=2" class="btn btn--outline">Explore Smart PTL</a>
-                                </div>
-                                <img src="images/ptl_dashboard.png" alt="Smart PTL Dashboard" style="width: 100%; height: 300px; object-fit: cover; object-position: left top; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Other panels (Fleet, Billing) follow same structure, abbreviated for brevity but fully functional -->
-                    <div class="tabs__panel js-tab-panel" id="tab-fleet">
-                        <div class="card card--bordered">
-                            <div class="split" style="gap:var(--space-8);">
-                                <div>
-                                    <h3 class="text-3xl mb-4">Smart Fleet Management</h3>
-                                    <p class="text-muted mb-6">Keep your trucks running profitably. Track every expense, maintenance schedule, and driver document expiry before it costs you money.</p>
-                                    <a href="/products/smart-fleet-management-system.html?v=2" class="btn btn--outline">Explore Smart Fleet</a>
-                                </div>
-                                <img src="images/fleet_dashboard.png" alt="Booking Entry Dashboard" style="width: 100%; height: 300px; object-fit: cover; object-position: left top; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tabs__panel js-tab-panel" id="tab-billing">
-                        <div class="card card--bordered">
-                            <div class="split" style="gap:var(--space-8);">
-                                <div>
-                                    <h3 class="text-3xl mb-4">Smart Billing</h3>
-                                    <p class="text-muted mb-6">Eliminate billing errors and delays. Auto-generate GST invoices based on contracted rates the moment a POD is uploaded.</p>
-                                    <a href="/products/smart-billing-management-system.html?v=2" class="btn btn--outline">Explore Smart Billing</a>
-                                </div>
-                                <img src="images/billing_dashboard.png" alt="Trip Accounting Dashboard" style="width: 100%; height: 300px; object-fit: cover; object-position: left center; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
-                            </div>
-                        </div>
+                    <div class="card card--elevated">
+                        <h3 class="card__title text-xl mb-3">Our Values</h3>
+                        <p class="card__description">Innovation, Reliability, Customer Success, and Integrity. We build software that logistics leaders can trust to run their most critical daily operations without fail.</p>
                     </div>
                 </div>
             </div>
@@ -357,23 +397,23 @@
                     <div class="process__steps">
                         <div class="process__step">
                             <div class="process__number">1</div>
-                            <h3 class="process__step-title">Consultation</h3>
-                            <p class="process__step-desc">We analyze your current workflow and identify automation opportunities.</p>
+                            <h3 class="process__step-title">Create Your Account</h3>
+                            <p class="process__step-desc">Sign up in seconds with your business credentials. No credit card required to explore our core dashboard features.</p>
                         </div>
                         <div class="process__step">
                             <div class="process__number">2</div>
-                            <h3 class="process__step-title">Configuration</h3>
-                            <p class="process__step-desc">We setup the system tailored strictly to your operational needs.</p>
+                            <h3 class="process__step-title">Integrate Your Fleet</h3>
+                            <p class="process__step-desc">Connect your existing GPS and telematics data. Our platform supports over 50+ industry-standard hardware providers.</p>
                         </div>
                         <div class="process__step">
                             <div class="process__number">3</div>
-                            <h3 class="process__step-title">Training</h3>
-                            <p class="process__step-desc">Complete onboarding for your staff and drivers to ensure adoption.</p>
+                            <h3 class="process__step-title">Define Routes</h3>
+                            <p class="process__step-desc">Input your delivery destinations and let our AI-driven engine calculate the most efficient paths for fuel savings.</p>
                         </div>
                         <div class="process__step">
                             <div class="process__number">4</div>
-                            <h3 class="process__step-title">Go Live</h3>
-                            <p class="process__step-desc">Start operating on the platform with 24/7 dedicated support.</p>
+                            <h3 class="process__step-title">Launch & Optimize</h3>
+                            <p class="process__step-desc">Push live updates to your drivers and monitor performance in real-time with our comprehensive analytics suite.</p>
                         </div>
                     </div>
                 </div>
@@ -395,12 +435,12 @@
                         <div class="carousel__slide">
                             <div class="card card--testimonial hover-lift">
                                 <div class="card__quote">"</div>
-                                <p class="card__text">Switching to LogiBrisk was the best tech decision we made. Our billing cycle dropped from 12 days to 2 days.</p>
+                                <p class="card__text">Over the past year, LogiBrisk TMS has completely enhanced the way we manage operations, billing, and accounting tasks. The platform is intuitive and integrates smoothly with our existing processes.</p>
                                 <div class="card__author">
-                                    <div class="card__author-avatar">R</div>
+                                    <div class="card__author-avatar">P</div>
                                     <div>
-                                        <div class="card__author-name">Rahul S.</div>
-                                        <div class="card__author-title">Operations Head</div>
+                                        <div class="card__author-name">Mr. Prastant Shelake</div>
+                                        <div class="card__author-title">CEO, SSG Logistics</div>
                                     </div>
                                 </div>
                             </div>
@@ -408,12 +448,12 @@
                         <div class="carousel__slide">
                             <div class="card card--testimonial hover-lift">
                                 <div class="card__quote">"</div>
-                                <p class="card__text">The driver app for POD uploads works flawlessly even in low network areas. Truly built for Indian conditions.</p>
+                                <p class="card__text">LogiBrisk TMS has been a game-changer for us at Shree Azad Group. With over 500 branches across India, managing our FTL and PTL operations, along with fleet management, was complex until Logibrisk.</p>
                                 <div class="card__author">
                                     <div class="card__author-avatar">A</div>
                                     <div>
-                                        <div class="card__author-name">Amit P.</div>
-                                        <div class="card__author-title">Fleet Owner</div>
+                                        <div class="card__author-name">Mr. Ashish Tekriwal</div>
+                                        <div class="card__author-title">Director, Shree Azad Group</div>
                                     </div>
                                 </div>
                             </div>
@@ -421,12 +461,12 @@
                         <div class="carousel__slide">
                             <div class="card card--testimonial hover-lift">
                                 <div class="card__quote">"</div>
-                                <p class="card__text">Their customer support is unmatched. Any custom report we need is usually developed and deployed within days.</p>
+                                <p class="card__text">Implementing LogiBrisk TMS has been one of the best decisions for SKE Group. Managing our FTL, PTL, and fleet operations, along with billing and accounting, has become much more efficient.</p>
                                 <div class="card__author">
-                                    <div class="card__author-avatar">M</div>
+                                    <div class="card__author-avatar">R</div>
                                     <div>
-                                        <div class="card__author-name">Mohit K.</div>
-                                        <div class="card__author-title">Logistics Director</div>
+                                        <div class="card__author-name">Mr. Rahul</div>
+                                        <div class="card__author-title">Director, SKE Group</div>
                                     </div>
                                 </div>
                             </div>
@@ -446,25 +486,35 @@
                     <h2 class="section-header__title">Frequently Asked Questions</h2>
                 </div>
                 
+                
                 <div class="grid grid--2 reveal-stagger" style="max-width: 900px; margin: 0 auto;">
                     <!-- FAQ Column 1 -->
                     <div class="faq-column">
                         <div class="js-accordion mb-4 hover-border" style="cursor:pointer; background-color: var(--bg-white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-4) var(--space-5);">
                             <div class="flex--between js-accordion-header">
-                                <h3 class="text-sm font-semibold">Do I need an IT team to manage this?</h3>
+                                <h3 class="text-sm font-semibold">Does Logibrisk supply transport management software in India?</h3>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="transition:transform 0.3s;"><polyline points="6 9 12 15 18 9"></polyline></svg>
                             </div>
                             <div class="js-accordion-content" style="max-height:0; overflow:hidden; transition:max-height 0.3s ease;">
-                                <p class="text-xs text-muted mt-3">Not at all. LogiBrisk is a cloud-based SaaS platform. We handle all the hosting, security, backups, and technical maintenance. You just log in and manage your business.</p>
+                                <p class="text-xs text-muted mt-3">Yes, Logibrisk is a leading transport management software provider in India, offering complete solutions for fleet, FTL, PTL, and transport management tailored to Indian logistics businesses.</p>
                             </div>
                         </div>
                         <div class="js-accordion mb-4 hover-border" style="cursor:pointer; background-color: var(--bg-white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-4) var(--space-5);">
                             <div class="flex--between js-accordion-header">
-                                <h3 class="text-sm font-semibold">Can it integrate with Tally or SAP?</h3>
+                                <h3 class="text-sm font-semibold">What features does Logibrisk's fleet management software offer?</h3>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="transition:transform 0.3s;"><polyline points="6 9 12 15 18 9"></polyline></svg>
                             </div>
                             <div class="js-accordion-content" style="max-height:0; overflow:hidden; transition:max-height 0.3s ease;">
-                                <p class="text-xs text-muted mt-3">Yes, our Enterprise plan includes API integrations with all major accounting software including Tally, SAP, and QuickBooks.</p>
+                                <p class="text-xs text-muted mt-3">Logibrisk offers advanced fleet management software with features like real-time vehicle tracking, fuel management, driver behavior monitoring, and automated maintenance scheduling to improve operational efficiency.</p>
+                            </div>
+                        </div>
+                        <div class="js-accordion mb-4 hover-border" style="cursor:pointer; background-color: var(--bg-white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-4) var(--space-5);">
+                            <div class="flex--between js-accordion-header">
+                                <h3 class="text-sm font-semibold">Can Logibrisk's TMS handle both FTL and PTL operations?</h3>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="transition:transform 0.3s;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </div>
+                            <div class="js-accordion-content" style="max-height:0; overflow:hidden; transition:max-height 0.3s ease;">
+                                <p class="text-xs text-muted mt-3">Absolutely! Logibrisk provides specialized software for both Full Truckload (FTL) and Part Truckload (PTL), helping transporters manage dispatches, billing, and routing smoothly across operations.</p>
                             </div>
                         </div>
                     </div>
@@ -472,28 +522,34 @@
                     <div class="faq-column">
                         <div class="js-accordion mb-4 hover-border" style="cursor:pointer; background-color: var(--bg-white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-4) var(--space-5);">
                             <div class="flex--between js-accordion-header">
-                                <h3 class="text-sm font-semibold">Is my data secure?</h3>
+                                <h3 class="text-sm font-semibold">How can Logibrisk transport management software help reduce costs?</h3>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="transition:transform 0.3s;"><polyline points="6 9 12 15 18 9"></polyline></svg>
                             </div>
                             <div class="js-accordion-content" style="max-height:0; overflow:hidden; transition:max-height 0.3s ease;">
-                                <p class="text-xs text-muted mt-3">Absolutely. We use enterprise-grade AWS servers with 256-bit encryption. Your data is backed up daily and is never shared with third parties.</p>
+                                <p class="text-xs text-muted mt-3">Our transportation management software helps reduce fuel wastage, prevent unauthorized vehicle use, optimize delivery routes, and automate manual processes, which significantly lowers overall operational costs.</p>
                             </div>
                         </div>
                         <div class="js-accordion mb-4 hover-border" style="cursor:pointer; background-color: var(--bg-white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-4) var(--space-5);">
                             <div class="flex--between js-accordion-header">
-                                <h3 class="text-sm font-semibold">How long does onboarding take?</h3>
+                                <h3 class="text-sm font-semibold">Do you provide a driver app with your fleet management software?</h3>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="transition:transform 0.3s;"><polyline points="6 9 12 15 18 9"></polyline></svg>
                             </div>
                             <div class="js-accordion-content" style="max-height:0; overflow:hidden; transition:max-height 0.3s ease;">
-                                <p class="text-xs text-muted mt-3">Standard setup takes just 24-48 hours. With data migration and staff training, you can be fully operational within 5 days.</p>
+                                <p class="text-xs text-muted mt-3">Yes, Logibrisk's fleet management software includes a dedicated driver app that allows drivers to update trip statuses, upload PODs (Proof of Delivery), and manage expenses directly from their smartphones.</p>
+                            </div>
+                        </div>
+                        <div class="js-accordion mb-4 hover-border" style="cursor:pointer; background-color: var(--bg-white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-4) var(--space-5);">
+                            <div class="flex--between js-accordion-header">
+                                <h3 class="text-sm font-semibold">Is Logibrisk's logistics software suitable for small transport businesses?</h3>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="transition:transform 0.3s;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </div>
+                            <div class="js-accordion-content" style="max-height:0; overflow:hidden; transition:max-height 0.3s ease;">
+                                <p class="text-xs text-muted mt-3">Yes! Logibrisk's logistics software is scalable and designed to meet the needs of all business sizes, from small fleet owners to large logistics enterprises, ensuring easy implementation and growth.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="text-center mt-8 reveal-up">
-                    <a href="/faqs.html" class="link link--arrow">View all FAQs</a>
-                </div>
+
             </div>
         </section>
 
@@ -505,7 +561,7 @@
                 <h2 class="cta-banner__title">Ready to scale your transport business?</h2>
                 <p class="cta-banner__subtitle">Join hundreds of logistics companies that have automated their operations with LogiBrisk.</p>
                 <div class="cta-banner__actions">
-                    <a href="/schedule-demo.html" class="btn btn--white btn--lg hover-lift">Schedule a Free Demo</a>
+                    <a href="portal/schedule-demo.html?nocache=1" class="btn btn--white btn--lg hover-lift">Schedule a Free Demo</a>
                     <a href="tel:+918000000000" class="btn btn--outline-light btn--lg hover-lift">Call Sales</a>
                 </div>
             </div>

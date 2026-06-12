@@ -4,6 +4,31 @@
             back-to-top button
    ============================================================ */
 
+// Preloader
+(function() {
+    if (document.querySelector('.page-preloader')) return;
+    const preloader = document.createElement('div');
+    preloader.className = 'page-preloader';
+    const path = window.location.pathname;
+    preloader.innerHTML = '<img src="/images/logo-logibrisk.svg" alt="LogiBrisk Logo" class="preloader-logo" style="width: 220px;">';
+    document.body.appendChild(preloader);
+
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            preloader.classList.add('fade-out');
+            setTimeout(() => preloader.remove(), 500);
+        }, 300);
+    });
+    
+    // Fallback if load already fired
+    if (document.readyState === 'complete') {
+        setTimeout(() => {
+            preloader.classList.add('fade-out');
+            setTimeout(() => preloader.remove(), 500);
+        }, 300);
+    }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
     loadIncludes();
     initScrollReveal();
@@ -56,7 +81,11 @@ async function loadIncludes() {
  */
 function getBasePath() {
     const path = window.location.pathname;
-    if (path.includes('/services/') || path.includes('/products/')) {
+    if (path.includes('/company/blog/')) {
+        return '../../';
+    }
+    if (path.includes('/services/') || path.includes('/products/') || 
+        path.includes('/company/') || path.includes('/legal/') || path.includes('/portal/')) {
         return '../';
     }
     return '';
@@ -395,3 +424,53 @@ function initCarousels() {
 document.addEventListener('DOMContentLoaded', () => {
     initCarousels();
 });
+
+
+/* ============================================================
+   8. ADVANCED INTERACTIVITY (Light Theme Upgrade)
+   ============================================================ */
+document.addEventListener('DOMContentLoaded', () => {
+    initMagneticButtons();
+    initTiltCards();
+    initParallax();
+});
+
+// Magnetic Buttons
+function initMagneticButtons() {
+    const buttons = document.querySelectorAll('.hover-lift');
+    
+    buttons.forEach(btn => {
+        btn.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            // Calculate movement from center
+            const xMove = (x - rect.width / 2) * 0.3;
+            const yMove = (y - rect.height / 2) * 0.3;
+            
+            this.style.transform = `translate(${xMove}px, ${yMove}px) scale(1.05)`;
+        });
+        
+        btn.addEventListener('mouseleave', function() {
+            this.style.transform = 'translate(0px, 0px) scale(1)';
+        });
+    });
+}
+
+// 3D Tilt Effect for cards and media
+function initTiltCards() {
+    // 3D Tilt effect disabled per user request
+    // Original behavior restored
+}
+
+// Simple Parallax for hero background
+function initParallax() {
+    const heroVideo = document.querySelector('.hero__bg-video');
+    if (heroVideo) {
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY;
+            heroVideo.style.transform = `translateX(-50%) translateY(calc(-50% + ${scrollPos * 0.4}px))`;
+        });
+    }
+}

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>LogiVite Dashboard</title>
+    
+    <!-- Tailwind & Plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Google Fonts & Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Tailwind Config (from reference UI) -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e16d10",
+                        "primary-container": "#c85d0e",
+                        "on-primary-container": "#ffffff",
+                        "electric-cobalt-light": "#FDF0E3",
+                        "ice-blue": "#E8EEF6",
+                        "surface": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#F5F7FA",
+                        "on-surface": "#06183d",
+                        "on-surface-variant": "#5a6370",
+                        "outline-variant": "#D6DCE5",
+                        "success-emerald": "#198754",
+                        "warning-amber": "#ffc107",
+                        "error-crimson": "#cd2026"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #F5F7FA; overflow: hidden; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        /* Modal Background */
+        .modal-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.5); backdrop-filter: blur(4px);
+            z-index: 100; display: none; align-items: center; justify-content: center;
+        }
+        .modal-overlay.active { display: flex; }
+    </style>
+</head>
+<body class="text-on-surface flex h-screen">
+
+    <!-- Sidebar -->
+    <aside class="w-64 shrink-0 border-r border-outline-variant/30 bg-surface flex flex-col p-4 relative z-40">
+        <div class="mb-8 px-2 flex items-center gap-3">
+            <a href="index.html">
+                <img src="../images/logo-logibrisk.svg" alt="LogiBrisk" class="h-8 hover:opacity-80 transition-opacity">
+            </a>
+        </div>
+        
+        <nav class="flex-1 space-y-2">
+            <a href="#" class="flex items-center px-3 py-2.5 rounded-lg bg-electric-cobalt-light text-primary font-semibold transition-all">
+                <span class="material-symbols-outlined mr-3 text-lg" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                <span>Overview</span>
+            </a>
+            <a href="/portal/tracking.html" class="flex items-center px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-ice-blue transition-all">
+                <span class="material-symbols-outlined mr-3 text-lg">location_on</span>
+                <span>Live Tracking</span>
+            </a>
+        </nav>
+        
+        <!-- User Profile (Bottom) -->
+        <div class="mt-auto pt-4 border-t border-outline-variant/20 flex items-center gap-3 px-2">
+            <div id="user-avatar" class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-sm">
+                US
+            </div>
+            <div>
+                <div id="user-name" class="font-semibold text-sm">User</div>
+                <div class="text-xs text-on-surface-variant">LogiBrisk Portal</div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col h-screen overflow-hidden">
+        
+        <!-- Topbar -->
+        <header class="h-16 border-b border-outline-variant/20 bg-surface-container-lowest flex items-center justify-between px-8 shrink-0 relative z-30">
+            <div>
+                <h2 id="welcome-message" class="text-xl font-headline font-bold">Welcome back!</h2>
+            </div>
+            
+            <div class="flex items-center gap-6">
+                <div class="relative w-64">
+                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+                    <input type="text" placeholder="Search shipments..." class="w-full pl-10 pr-4 py-2 rounded-full border border-outline-variant/30 bg-surface-container-low text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" onkeypress="if(event.key === 'Enter') alert('Search results for: ' + this.value)">
+                </div>
+                <button onclick="alert('You have 2 new notifications!')" class="text-on-surface-variant hover:text-primary transition-colors relative">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <span class="absolute top-0 right-0 w-2 h-2 rounded-full bg-error-crimson"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Dashboard Content Container -->
+        <div class="flex-1 overflow-y-auto p-8 bg-surface-container-low flex flex-col gap-6">
+            
+            <!-- Stat Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/20 shadow-sm">
+                    <div class="text-on-surface-variant text-sm font-medium mb-2">Active Shipments</div>
+                    <div class="text-3xl font-bold font-headline">124</div>
+                </div>
+                <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/20 shadow-sm">
+                    <div class="text-on-surface-variant text-sm font-medium mb-2">Delivered (This Month)</div>
+                    <div class="text-3xl font-bold font-headline text-success-emerald">482</div>
+                </div>
+                <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/20 shadow-sm">
+                    <div class="text-on-surface-variant text-sm font-medium mb-2">Delayed</div>
+                    <div class="text-3xl font-bold font-headline text-warning-amber">3</div>
+                </div>
+                <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/20 shadow-sm">
+                    <div class="text-on-surface-variant text-sm font-medium mb-2">Total Freight Spend</div>
+                    <div class="text-3xl font-bold font-headline">$42,500</div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Main Graph Section -->
+                <div class="lg:col-span-2 bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/20 shadow-sm flex flex-col h-96">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-headline font-bold text-lg">Shipment Volume Trend</h3>
+                        <select id="timeRangeSelect" onchange="updateChartData()" class="text-sm border border-outline-variant/30 rounded px-2 py-1 bg-surface outline-none focus:border-primary">
+                            <option value="6m">Last 6 Months</option>
+                            <option value="1y">This Year</option>
+                        </select>
+                    </div>
+                    <div class="flex-1 relative w-full h-full">
+                        <!-- Chart.js Canvas -->
+                        <canvas id="shipmentChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Quick Actions & Alerts -->
+                <div class="flex flex-col gap-6">
+                    <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/20 shadow-sm">
+                        <h3 class="font-headline font-bold text-lg mb-4">Quick Actions</h3>
+                        <div class="flex flex-col gap-3">
+                            <button onclick="openModal()" class="w-full py-3 rounded-lg bg-primary text-white font-semibold flex justify-center items-center gap-2 hover:bg-primary-container transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-sm">add</span>
+                                Book New Shipment
+                            </button>
+                            <button onclick="alert('Preparing reports for download...')" class="w-full py-3 rounded-lg bg-electric-cobalt-light text-primary font-semibold flex justify-center items-center gap-2 hover:bg-ice-blue transition-colors">
+                                <span class="material-symbols-outlined text-sm">download</span>
+                                Download Reports
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#FFFBEB] p-6 rounded-xl border border-[#FDE68A] shadow-sm">
+                        <h3 class="font-headline font-bold text-[#92400E] mb-2 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-lg">warning</span>
+                            Weather Alert
+                        </h3>
+                        <p class="text-sm text-[#92400E] leading-relaxed">
+                            Heavy storms expected in the eastern logistics corridor. Shipments passing through Sector 4 may experience up to 12-hour delays.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Shipments Table -->
+            <div class="bg-surface-container-lowest rounded-xl border border-outline-variant/20 shadow-sm overflow-hidden">
+                <div class="p-6 border-b border-outline-variant/20 flex justify-between items-center">
+                    <h3 class="font-headline font-bold text-lg">Recent Shipments</h3>
+                    <button onclick="alert('Loading all recent shipments...')" class="text-sm text-primary font-medium hover:underline">View All</button>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-surface border-b border-outline-variant/20 text-on-surface-variant text-sm">
+                                <th class="p-4 font-medium">Tracking ID</th>
+                                <th class="p-4 font-medium">Route</th>
+                                <th class="p-4 font-medium">Date Dispatched</th>
+                                <th class="p-4 font-medium">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="shipments-tbody" class="text-sm">
+                            <!-- Dynamic Rows Inserted by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Modal for Booking Shipment -->
+    <div id="bookingModal" class="modal-overlay">
+        <div class="bg-surface-container-lowest w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden transform scale-95 opacity-0 transition-all duration-300" id="modalContent">
+            <div class="p-6 border-b border-outline-variant/20 flex justify-between items-center bg-surface">
+                <h3 class="font-headline font-bold text-xl">Book New Shipment</h3>
+                <button onclick="closeModal()" class="text-on-surface-variant hover:text-error-crimson transition-colors">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <form class="p-6 space-y-4" onsubmit="handleBooking(event)">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-on-surface-variant mb-1">Origin City</label>
+                        <input type="text" required class="w-full border border-outline-variant/30 rounded-lg p-2.5 text-sm focus:border-primary focus:ring-1 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-on-surface-variant mb-1">Destination City</label>
+                        <input type="text" required class="w-full border border-outline-variant/30 rounded-lg p-2.5 text-sm focus:border-primary focus:ring-1 outline-none">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-on-surface-variant mb-1">Freight Type</label>
+                    <select class="w-full border border-outline-variant/30 rounded-lg p-2.5 text-sm focus:border-primary focus:ring-1 outline-none">
+                        <option>Air Freight</option>
+                        <option>Ocean Freight</option>
+                        <option>Road Transport</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-on-surface-variant mb-1">Weight (kg)</label>
+                    <input type="number" required class="w-full border border-outline-variant/30 rounded-lg p-2.5 text-sm focus:border-primary focus:ring-1 outline-none">
+                </div>
+                <div class="pt-4 flex justify-end gap-3">
+                    <button type="button" onclick="closeModal()" class="px-5 py-2.5 rounded-lg border border-outline-variant/30 text-sm font-semibold hover:bg-surface-variant transition-colors">Cancel</button>
+                    <button type="submit" class="px-5 py-2.5 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-primary-container transition-colors shadow-sm">Confirm Booking</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // 1. User Data Initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = localStorage.getItem('logivite_user') || 'Guest';
+            const formattedName = user.charAt(0).toUpperCase() + user.slice(1);
+            
+            document.getElementById('user-name').textContent = formattedName;
+            document.getElementById('welcome-message').textContent = 'Welcome back, ' + formattedName + '!';
+            document.getElementById('user-avatar').textContent = formattedName.substring(0, 2).toUpperCase();
+
+            // Render Dynamic Data
+            renderChart();
+            renderTable();
+        });
+
+        // 2. Chart.js Dynamic Data Generation
+        let shipmentChartInstance = null;
+
+        function renderChart() {
+            const ctx = document.getElementById('shipmentChart').getContext('2d');
+            
+            // Mocking an API fetch with dynamic JS logic
+            const timeRange = document.getElementById('timeRangeSelect') ? document.getElementById('timeRangeSelect').value : '6m';
+            const months = timeRange === '1y' 
+                ? ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] 
+                : ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
+            
+            // Generate some realistic-looking data
+            const airData = months.map(() => Math.floor(Math.random() * 50) + 20);
+            const oceanData = months.map(() => Math.floor(Math.random() * 80) + 40);
+            const roadData = months.map(() => Math.floor(Math.random() * 100) + 60);
+
+            if (shipmentChartInstance) {
+                shipmentChartInstance.destroy();
+            }
+
+            shipmentChartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: months,
+                    datasets: [
+                        {
+                            label: 'Road Freight',
+                            data: roadData,
+                            borderColor: '#e16d10',
+                            backgroundColor: 'rgba(225, 109, 16, 0.1)',
+                            borderWidth: 2,
+                            fill: true,
+                            tension: 0.4
+                        },
+                        {
+                            label: 'Ocean Freight',
+                            data: oceanData,
+                            borderColor: '#00b9f2',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.4
+                        },
+                        {
+                            label: 'Air Freight',
+                            data: airData,
+                            borderColor: '#06183d',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom' }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: '#e1e1ef' }
+                        },
+                        x: {
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateChartData() {
+            renderChart();
+        }
+
+        // 3. Dynamic Table Generation
+        function renderTable() {
+            const tbody = document.getElementById('shipments-tbody');
+            const statuses = [
+                { label: 'In Transit', class: 'bg-electric-cobalt-light text-primary border-primary/20' },
+                { label: 'Delivered', class: 'bg-[#D1FAE5] text-[#065F46] border-[#065F46]/20' },
+                { label: 'Delayed', class: 'bg-[#FEF3C7] text-[#92400E] border-[#92400E]/20' }
+            ];
+            const routes = ['Delhi → Mumbai', 'New York → London', 'Singapore → Tokyo', 'Dubai → Berlin'];
+            
+            let html = '';
+            for(let i=0; i<4; i++) {
+                const route = routes[Math.floor(Math.random() * routes.length)];
+                const stat = statuses[Math.floor(Math.random() * statuses.length)];
+                const id = 'SHP-' + Math.floor(1000 + Math.random() * 9000);
+                
+                html += `
+                    <tr class="border-b border-outline-variant/10 hover:bg-surface transition-colors cursor-pointer">
+                        <td class="p-4 font-semibold text-primary">${id}</td>
+                        <td class="p-4 text-on-surface-variant">${route}</td>
+                        <td class="p-4 text-on-surface-variant">Today</td>
+                        <td class="p-4">
+                            <span class="px-2.5 py-1 text-xs font-semibold rounded border ${stat.class}">${stat.label}</span>
+                        </td>
+                    </tr>
+                `;
+            }
+            tbody.innerHTML = html;
+        }
+
+        // 4. Modal Interactivity
+        const modal = document.getElementById('bookingModal');
+        const modalContent = document.getElementById('modalContent');
+        
+        function openModal() {
+            modal.classList.add('active');
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+        
+        function closeModal() {
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            modalContent.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.remove('active');
+            }, 300);
+        }
+        
+        function handleBooking(e) {
+            e.preventDefault();
+            alert('Booking submitted successfully to LogiBrisk network!');
+            closeModal();
+        }
+    </script>
+</body>
+</html>

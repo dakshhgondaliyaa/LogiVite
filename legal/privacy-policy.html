@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | LogiBrisk</title>
+    <meta name="description" content="LogiBrisk Privacy Policy detailing how we handle and protect your data.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/globals.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/footer.css?v=2">
+    <link rel="stylesheet" href="../css/hero.css">
+    <link rel="stylesheet" href="../css/sections.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero hero--compact" style="position: relative; overflow: hidden; background-color: #f8fafc;">
+            <div class="container hero__inner" style="position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: center;">
+                <div class="hero__content reveal-up text-center mx-auto" style="max-width: 800px;">
+                    <h1 class="hero__title">Privacy Policy</h1>
+                    <p class="hero__subtitle">Last Updated: 23/03/2026</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTENT LAYOUT -->
+        <section class="section section--light">
+            <div class="container">
+                <div class="legal-layout">
+                    
+                    <!-- Sticky Sidebar TOC -->
+                    <div class="legal-toc reveal-left">
+                        <h3 class="legal-toc__title">Contents</h3>
+                        <div class="legal-toc__list">
+                            <a href="#information" class="legal-toc__link active">1. Information We Collect</a>
+                            <a href="#purpose" class="legal-toc__link">2. Purpose of Data Collection</a>
+                            <a href="#legal-basis" class="legal-toc__link">3. Legal Basis (India Context)</a>
+                            <a href="#data-storage" class="legal-toc__link">4. Data Storage &amp; Security</a>
+                            <a href="#data-sharing" class="legal-toc__link">5. Data Sharing</a>
+                            <a href="#cookies" class="legal-toc__link">6. Cookies</a>
+                            <a href="#data-retention" class="legal-toc__link">7. Data Retention</a>
+                            <a href="#user-rights" class="legal-toc__link">8. User Rights</a>
+                            <a href="#third-party" class="legal-toc__link">9. Third-Party Services</a>
+                            <a href="#updates" class="legal-toc__link">10. Updates to Policy</a>
+                            <a href="#contact" class="legal-toc__link">11. Contact Us</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Content Area -->
+                    <div class="legal-content reveal-right">
+                        <p>LogiBrisk is committed to protecting your privacy.</p>
+                        
+                        <h2 id="information">1. Information We Collect</h2>
+                        <ul>
+                            <li>Name, email, phone number</li>
+                            <li>Business and GST details</li>
+                            <li>Usage data and logs</li>
+                        </ul>
+
+                        <h2 id="purpose">2. Purpose of Data Collection</h2>
+                        <ul>
+                            <li>Provide and improve services</li>
+                            <li>Billing and compliance</li>
+                            <li>Customer support</li>
+                        </ul>
+
+                        <h2 id="legal-basis">3. Legal Basis (India Context)</h2>
+                        <p>We process data in accordance with applicable Indian laws including IT Act and data protection guidelines.</p>
+
+                        <h2 id="data-storage">4. Data Storage &amp; Security</h2>
+                        <ul>
+                            <li>Data is stored securely using industry standards</li>
+                            <li>Encryption and access controls are implemented</li>
+                        </ul>
+
+                        <h2 id="data-sharing">5. Data Sharing</h2>
+                        <p>We do not sell user data. We may share data with:</p>
+                        <ul>
+                            <li>Payment gateways</li>
+                            <li>Legal authorities if required</li>
+                        </ul>
+
+                        <h2 id="cookies">6. Cookies</h2>
+                        <p>We use cookies to improve user experience and analytics.</p>
+
+                        <h2 id="data-retention">7. Data Retention</h2>
+                        <ul>
+                            <li>Data is retained as long as required for service and compliance</li>
+                            <li>Users may request deletion</li>
+                        </ul>
+
+                        <h2 id="user-rights">8. User Rights</h2>
+                        <p>Users can:</p>
+                        <ul>
+                            <li>Access their data</li>
+                            <li>Request correction or deletion</li>
+                        </ul>
+
+                        <h2 id="third-party">9. Third-Party Services</h2>
+                        <p>We integrate with third-party services (e.g., payment providers). Their policies apply separately.</p>
+
+                        <h2 id="updates">10. Updates to Policy</h2>
+                        <p>We may update this policy periodically.</p>
+
+                        <h2 id="contact">11. Contact Us</h2>
+                        <p>
+                            Phone: +91 98244 79555<br>
+                            Email: <a href="mailto:sales@logibrisk.com" class="text-orange">sales@logibrisk.com</a>
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Simple script to highlight TOC items on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('.legal-toc__link');
+            const sections = Array.from(links).map(link => document.querySelector(link.getAttribute('href')));
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (scrollY >= sectionTop - 150) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                links.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+            // Smooth scroll
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

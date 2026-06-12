@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refund Policy | LogiBrisk</title>
+    <meta name="description" content="LogiBrisk Cancellation and Refund Policy.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/globals.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/footer.css?v=2">
+    <link rel="stylesheet" href="../css/hero.css">
+    <link rel="stylesheet" href="../css/sections.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero hero--compact" style="position: relative; overflow: hidden; background-color: #f8fafc;">
+            <div class="container hero__inner" style="position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: center;">
+                <div class="hero__content reveal-up text-center mx-auto" style="max-width: 800px;">
+                    <h1 class="hero__title">Refund Policy</h1>
+                    <p class="hero__subtitle">Last Updated: 23/03/2026</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTENT LAYOUT -->
+        <section class="section section--light">
+            <div class="container">
+                <div class="legal-layout">
+                    
+                    <!-- Sticky Sidebar TOC -->
+                    <div class="legal-toc reveal-left">
+                        <h3 class="legal-toc__title">Contents</h3>
+                        <div class="legal-toc__list">
+                            <a href="#free-trial" class="legal-toc__link active">1. Free Trial</a>
+                            <a href="#eligibility" class="legal-toc__link">2. Refund Eligibility</a>
+                            <a href="#process" class="legal-toc__link">3. Refund Process</a>
+                            <a href="#mode" class="legal-toc__link">4. Mode of Refund</a>
+                            <a href="#non-refundable" class="legal-toc__link">5. Non-Refundable Cases</a>
+                            <a href="#gst" class="legal-toc__link">6. GST Treatment</a>
+                            <a href="#working-days" class="legal-toc__link">7. Working Days</a>
+                            <a href="#contact" class="legal-toc__link">8. Contact Us</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Content Area -->
+                    <div class="legal-content reveal-right">
+                        <p>At LogiBrisk, customer satisfaction is important to us.</p>
+                        
+                        <h2 id="free-trial">1. Free Trial</h2>
+                        <p>We offer a free trial without collecting payment details. Users are encouraged to evaluate the platform before subscribing.</p>
+
+                        <h2 id="eligibility">2. Refund Eligibility</h2>
+                        <p>Refund requests must be made within 7 days of subscription start date. Requests beyond this period will not be accepted.</p>
+
+                        <h2 id="process">3. Refund Process</h2>
+                        <p>Submit refund request via email with account details. Upon approval, refunds will be processed within 5 to 7 working days.</p>
+
+                        <h2 id="mode">4. Mode of Refund</h2>
+                        <p>Refunds will be credited to the original payment method.</p>
+
+                        <h2 id="non-refundable">5. Non-Refundable Cases</h2>
+                        <ul>
+                            <li>Requests after 7 days</li>
+                            <li>Partial usage beyond eligibility window</li>
+                            <li>Change of mind after significant usage</li>
+                        </ul>
+
+                        <h2 id="gst">6. GST Treatment</h2>
+                        <p>GST portion, if applicable, will be handled as per Indian tax regulations.</p>
+
+                        <h2 id="working-days">7. Working Days</h2>
+                        <p>Refund processing occurs on Monday to Friday, excluding public holidays.</p>
+
+                        <h2 id="contact">8. Contact Us</h2>
+                        <p>
+                            Phone: +91 98244 79555<br>
+                            Email: <a href="mailto:sales@logibrisk.com" class="text-orange">sales@logibrisk.com</a>
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('.legal-toc__link');
+            const sections = Array.from(links).map(link => document.querySelector(link.getAttribute('href')));
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (scrollY >= sectionTop - 150) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                links.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

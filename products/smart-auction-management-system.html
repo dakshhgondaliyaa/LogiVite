@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../css/globals.css">
     <link rel="stylesheet" href="../css/animations.css">
     <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/footer.css?v=2">
     <link rel="stylesheet" href="../css/hero.css">
     <link rel="stylesheet" href="../css/sections.css">
     <link rel="stylesheet" href="../css/cards.css">
@@ -25,14 +25,20 @@
 
     <main>
         <!-- HERO -->
-        <section class="hero hero--gradient">
-            <div class="container hero__inner">
-                <div class="hero__content reveal-up">
+        <section class="hero hero--compact" style="position: relative; overflow: hidden; background-color: #f8fafc;">
+            <div class="container hero__inner" style="position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: center;">
+                <div class="hero__content reveal-left">
                     <div class="hero__badge">Product Module</div>
                     <h1 class="hero__title">Smart Auction System</h1>
                     <p class="hero__subtitle">Digital freight procurement through reverse bidding. Stop making endless phone calls to find the best rate for your loads.</p>
                     <div class="hero__actions mt-8">
-                        <a href="/schedule-demo.html?v=2" class="btn btn--primary btn--lg hover-lift">Book a Demo</a>
+                        <a href="../portal/schedule-demo.html?nocache=1" class="btn btn--primary btn--lg hover-lift">Book a Demo</a>
+                    </div>
+                </div>
+            
+                <div class="hero__media reveal-right flex--center" style="position: relative; perspective: 1000px;">
+                    <div class="js-tilt-card" style="width: 100%; max-width: 600px; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-xl); background-color: #fff; transform-style: preserve-3d;">
+                        <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80" alt="Auction and Bidding" style="width: 100%; height: auto; display: block;">
                     </div>
                 </div>
             </div>
@@ -80,7 +86,7 @@
             <div class="container cta-banner__content">
                 <h2 class="cta-banner__title">Ready to reduce your freight costs?</h2>
                 <div class="cta-banner__actions mt-8">
-                    <a href="/schedule-demo.html?v=2" class="btn btn--white btn--lg hover-lift">Get Started</a>
+                    <a href="../portal/schedule-demo.html?nocache=1" class="btn btn--white btn--lg hover-lift">Get Started</a>
                 </div>
             </div>
         </section>

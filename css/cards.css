@@ -53,6 +53,7 @@
     background-color: var(--bg-white);
     border: 1px solid var(--border);
     padding: var(--space-8);
+    transition: all var(--transition-base);
 }
 
 .card--bordered:hover {
@@ -302,7 +303,7 @@
 
 .section--dark .card--testimonial .card__author-name,
 .section--dark-alt .card--testimonial .card__author-name {
-    color: var(--bg-white);
+    color: var(--blue-primary);
 }
 
 .section--dark .card--testimonial .card__author-avatar,

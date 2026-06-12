@@ -18,8 +18,8 @@
     /* Backgrounds */
     --bg-main: #FFFFFF;
     --bg-light-alt: #F5F7FA;            /* Soft cool gray for alternating sections */
-    --bg-dark: #06183d;                 /* Deep Navy (Yusen primary) */
-    --bg-dark-alt: #0A2350;             /* Slightly lighter navy */
+    --bg-dark: #FFFFFF;                 /* Deep Navy (Yusen primary) -> Changed to White */
+    --bg-dark-alt: #F8FAFC;             /* Slightly lighter navy -> Changed to Soft Gray */
     --bg-white: #FFFFFF;
 
     /* Colors - Primary Brand (Navy & Orange) */
@@ -37,9 +37,9 @@
     --text-heading: #06183d;           /* Deep Navy for headings */
     --text-body: #3a3f47;             /* Dark gray for body paragraphs */
     --text-muted: #5a6370;            /* Medium gray for secondary text */
-    --text-light: #FFFFFF;            /* White for text on dark backgrounds */
-    --text-on-dark: #FFFFFF;
-    --text-on-dark-muted: rgba(255, 255, 255, 0.78);
+    --text-light: #06183d;            /* White for text on dark backgrounds -> Changed to Navy */
+    --text-on-dark: #06183d;          /* -> Changed to Navy */
+    --text-on-dark-muted: rgba(6, 24, 61, 0.78); /* -> Changed to Navy muted */
     
     /* UI Elements */
     --border: #D6DCE5;                 /* Subtle gray border */
@@ -481,7 +481,7 @@ strong {
 
 .btn--outline:hover {
     background-color: var(--blue-primary);
-    color: var(--text-light);
+    color: var(--bg-white);
     transform: translateY(-2px);
 }
 
