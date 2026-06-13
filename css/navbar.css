@@ -164,14 +164,15 @@
     padding: 10px 14px;
     font-size: var(--text-sm);
     color: rgba(6, 24, 61, 0.78);
-    border-radius: var(--radius-md);
+    border-radius: 0;
     transition: background-color var(--transition-fast), color var(--transition-fast);
     text-decoration: none;
     min-height: 48px;
+    border-bottom: 1px solid rgba(6, 24, 61, 0.08);
 }
 
 .nav-dropdown__link:hover {
-    background-color: rgba(6, 24, 61, 0.08);
+    background-color: rgba(6, 24, 61, 0.04);
     color: var(--blue-primary);
 }
 

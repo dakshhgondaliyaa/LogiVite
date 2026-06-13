@@ -19,15 +19,15 @@
 
 @media (min-width: 768px) {
     .footer__top {
-        grid-template-columns: 1.5fr auto auto auto auto;
-        gap: var(--space-10);
+        grid-template-columns: 1.5fr auto auto auto auto auto;
+        gap: var(--space-8);
     }
 }
 
 @media (min-width: 1024px) {
     .footer__top {
-        grid-template-columns: 2.5fr auto auto auto auto;
-        gap: var(--space-12);
+        grid-template-columns: 2fr auto auto auto auto auto;
+        gap: var(--space-10);
     }
 }
 

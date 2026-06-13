@@ -7,6 +7,24 @@
     position: relative;
     border-radius: var(--radius-lg);
     transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+    /* Removed overflow: hidden so pills/badges can break out of the card */
+}
+
+/* Top gradient border for all white-background cards that lift on hover */
+.card--elevated::before,
+.card--feature::before,
+.card--blog::before,
+.card--pricing::before,
+.card--team::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, var(--blue-primary), var(--orange-cta));
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    z-index: 10;
 }
 
 /* ---- Elevated Card (White, shadow) ---- */
@@ -477,21 +495,8 @@
     box-shadow: var(--shadow-lg);
 }
 
-.card--pricing.featured::before {
-    content: 'Most Popular';
-    position: absolute;
-    top: -14px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 4px 20px;
-    font-size: var(--text-xs);
-    font-weight: 600;
-    color: var(--bg-white);
-    background-color: var(--orange-cta);
-    border-radius: var(--radius-full);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
+/* Custom "Most Popular" pill is handled directly in HTML, so we don't override ::before here.
+   This allows the gradient top border to apply natively to the featured card as well. */
 
 .card--pricing .card__plan-name {
     font-size: var(--text-lg);

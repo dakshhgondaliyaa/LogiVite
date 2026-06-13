@@ -398,27 +398,35 @@
 /* ============================================================
    8. CLIENT LOGO GRID
    ============================================================ */
-.client-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-5);
+.marquee-container {
+    display: flex;
+    overflow: hidden;
+    gap: 2rem;
+    position: relative;
+    padding: 1rem 0;
+    /* Soft fade on the edges */
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
 
-@media (min-width: 480px) {
-    .client-grid {
-        grid-template-columns: repeat(3, 1fr);
+.marquee-track {
+    display: flex;
+    gap: 2rem;
+    min-width: 100%;
+    justify-content: space-around;
+    animation: marquee-scroll 15s linear infinite;
+}
+
+.marquee-container:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+    from {
+        transform: translateX(0);
     }
-}
-
-@media (min-width: 768px) {
-    .client-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .client-grid {
-        grid-template-columns: repeat(5, 1fr);
+    to {
+        transform: translateX(calc(-100% - 2rem));
     }
 }
 
