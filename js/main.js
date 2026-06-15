@@ -29,19 +29,23 @@
     `;
     document.body.appendChild(preloader);
 
-    window.addEventListener('load', () => {
-        setTimeout(() => {
+    function removePreloader() {
+        if (document.body.contains(preloader)) {
             preloader.classList.add('fade-out');
             setTimeout(() => preloader.remove(), 500);
-        }, 300);
+        }
+    }
+
+    window.addEventListener('load', () => {
+        setTimeout(removePreloader, 300);
     });
+    
+    // Safety timeout (max 1.5s) to ensure the preloader doesn't hang on pages with heavy iframes (like the Demo Calendar)
+    setTimeout(removePreloader, 1500);
     
     // Fallback if load already fired
     if (document.readyState === 'complete') {
-        setTimeout(() => {
-            preloader.classList.add('fade-out');
-            setTimeout(() => preloader.remove(), 500);
-        }, 300);
+        setTimeout(removePreloader, 300);
     }
 })();
 
@@ -95,12 +99,51 @@ async function loadIncludes() {
                 html = html.replace(/href="\//g, `href="${repoPrefix}`);
                 html = html.replace(/src="\//g, `src="${repoPrefix}`);
                 footerPlaceholder.innerHTML = html;
+                initFooterBehaviors();
             }
         } catch (e) {
             console.warn('Footer include not found:', e);
         }
     }
 }
+
+/**
+ * Initialize behaviors for dynamically loaded footer, including the Schedule Demo modal
+ */
+function initFooterBehaviors() {
+    // 1. Set current year dynamically
+    const yearEl = document.getElementById('current-year');
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+    }
+
+    const modal = document.getElementById('demoModal');
+
+    // 2. Modal outer-click close listener
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    }
+
+    // 3. Global click interceptor for Schedule Demo links
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('a');
+        if (link && link.href) {
+            // Check if link goes to schedule-demo page
+            if (link.href.includes('schedule-demo') || link.pathname.includes('schedule-demo')) {
+                const modalEl = document.getElementById('demoModal');
+                if (modalEl) {
+                    e.preventDefault();
+                    modalEl.style.display = 'flex';
+                }
+            }
+        }
+    });
+}
+
 
 /**
  * Determine the base path relative to current page depth

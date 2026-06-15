@@ -126,6 +126,11 @@
     color: var(--text-heading);
 }
 
+.card__title:last-child {
+    margin-bottom: 0;
+}
+
+
 .card__description {
     font-size: var(--text-base);
     color: var(--text-muted);
