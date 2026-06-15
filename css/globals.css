@@ -446,12 +446,10 @@ strong {
     background-color: var(--orange-hover);
     border-color: var(--orange-hover);
     color: #FFFFFF;
-    transform: translateY(-2px);
     box-shadow: var(--shadow-glow-orange);
 }
 
 .btn--primary:active {
-    transform: translateY(0);
 }
 
 /* Secondary — Deep Navy */
@@ -464,12 +462,10 @@ strong {
 .btn--secondary:hover {
     background-color: var(--blue-secondary);
     border-color: var(--blue-secondary);
-    transform: translateY(-2px);
     box-shadow: var(--shadow-glow-blue);
 }
 
 .btn--secondary:active {
-    transform: translateY(0);
 }
 
 /* Outline — Ghost */
@@ -482,20 +478,19 @@ strong {
 .btn--outline:hover {
     background-color: var(--blue-primary);
     color: var(--bg-white);
-    transform: translateY(-2px);
 }
 
 /* Outline on dark */
 .btn--outline-light {
     background-color: transparent;
-    color: var(--text-light);
+    color: #FFFFFF;
     border-color: rgba(255, 255, 255, 0.4);
 }
 
 .btn--outline-light:hover {
     background-color: rgba(255, 255, 255, 0.12);
     border-color: rgba(255, 255, 255, 0.7);
-    transform: translateY(-2px);
+    color: #FFFFFF;
 }
 
 /* White button (for gradient/dark sections) */
@@ -508,7 +503,6 @@ strong {
 
 .btn--white:hover {
     background-color: var(--bg-light-alt);
-    transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
 

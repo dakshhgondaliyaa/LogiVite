@@ -176,6 +176,12 @@
     color: var(--blue-primary);
 }
 
+/* Remove bottom border for the last row items in the 2-column grid */
+.nav-dropdown__link:last-child,
+.nav-dropdown__link:nth-last-child(2) {
+    border-bottom: none;
+}
+
 .nav-dropdown__link-icon {
     width: 18px;
     height: 18px;

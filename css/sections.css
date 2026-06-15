@@ -451,14 +451,12 @@
     max-height: 40px;
     width: auto;
     object-fit: contain;
-    filter: grayscale(100%);
-    opacity: 0.6;
+    opacity: 1;
     transition: all var(--transition-base);
 }
 
 .client-grid__item:hover img {
-    filter: grayscale(0%);
-    opacity: 1;
+    transform: scale(1.05);
 }
 
 /* ============================================================
@@ -472,6 +470,7 @@
 .carousel__track {
     display: flex;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 40px 0;
 }
 
 .carousel__slide {

@@ -9,6 +9,10 @@
     padding-bottom: 0;
 }
 
+.footer .container {
+    max-width: 1800px; /* Give the footer more space to fit long links */
+}
+
 /* ---- Footer Top (Main Content) ---- */
 .footer__top {
     display: grid;
@@ -19,15 +23,16 @@
 
 @media (min-width: 768px) {
     .footer__top {
-        grid-template-columns: 1.5fr auto auto auto auto auto;
+        grid-template-columns: 1fr 1fr 1fr;
         gap: var(--space-8);
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
     .footer__top {
-        grid-template-columns: 2fr auto auto auto auto auto;
+        grid-template-columns: 320px auto auto auto auto auto;
         gap: var(--space-10);
+        justify-content: space-between;
     }
 }
 

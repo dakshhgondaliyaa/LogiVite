@@ -457,7 +457,7 @@ document.addEventListener('DOMContentLoaded', () => {
    8. ADVANCED INTERACTIVITY (Light Theme Upgrade)
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
-    initMagneticButtons();
+    // initMagneticButtons(); // Disabled: user requested simple CSS pop-up instead of magnetic left/right movement
     initTiltCards();
     initParallax();
 });

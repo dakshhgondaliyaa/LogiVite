@@ -6,7 +6,9 @@
 .card {
     position: relative;
     border-radius: var(--radius-lg);
-    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+    transform-origin: center center;
+    z-index: 1;
     /* Removed overflow: hidden so pills/badges can break out of the card */
 }
 
@@ -15,7 +17,8 @@
 .card--feature::before,
 .card--blog::before,
 .card--pricing::before,
-.card--team::before {
+.card--team::before,
+.card--bordered::before {
     content: '';
     position: absolute;
     top: 0;
@@ -36,9 +39,11 @@
 }
 
 .card--elevated:hover {
-    transform: translateY(-4px);
+    transform: scale(1.02);
     box-shadow: var(--shadow-card-hover);
     border-color: var(--blue-light);
+    z-index: 50 !important;
+    position: relative;
 }
 
 /* ---- Glass Card (Semi-transparent on dark bg) ---- */
@@ -52,9 +57,11 @@
 }
 
 .card--glass:hover {
+    transform: scale(1.02);
     border-color: rgba(0, 185, 242, 0.4);
     background: rgba(10, 35, 80, 0.5);
-    transform: translateY(-2px);
+    z-index: 50 !important;
+    position: relative;
 }
 
 .card--glass h3,
@@ -70,7 +77,7 @@
 .card--bordered {
     background-color: var(--bg-white);
     border: 1px solid var(--border);
-    padding: var(--space-8);
+    padding: var(--space-6);
     transition: all var(--transition-base);
 }
 
@@ -185,9 +192,11 @@
 }
 
 .card--feature:hover {
+    transform: scale(1.02);
     border-color: var(--blue-light);
     box-shadow: var(--shadow-md);
-    transform: translateY(-2px);
+    z-index: 50 !important;
+    position: relative;
 }
 
 .card--feature .card__icon {
@@ -345,9 +354,11 @@
 }
 
 .card--blog:hover {
-    transform: translateY(-4px);
+    transform: scale(1.02);
     box-shadow: var(--shadow-card-hover);
     border-color: var(--blue-light);
+    z-index: 50 !important;
+    position: relative;
 }
 
 .card--blog .card__image {
@@ -407,8 +418,10 @@
 }
 
 .card--team:hover {
-    transform: translateY(-4px);
+    transform: scale(1.02);
     box-shadow: var(--shadow-card-hover);
+    z-index: 50 !important;
+    position: relative;
 }
 
 .card--team .card__image-wrapper {
@@ -486,8 +499,10 @@
 }
 
 .card--pricing:hover {
-    transform: translateY(-4px);
+    transform: scale(1.02);
     box-shadow: var(--shadow-xl);
+    z-index: 50 !important;
+    position: relative;
 }
 
 .card--pricing.featured {
